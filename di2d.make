@@ -74,7 +74,7 @@ projects[features][subdir] = "contrib"
 projects[features_override][version] = "2"
 projects[features_override][subdir] = "contrib"
 
-projects[fences][version] = "1"
+projects[fences][version] = "1.x-dev"
 projects[fences][subdir] = "contrib"
 
 projects[field_group][version] = "1"
