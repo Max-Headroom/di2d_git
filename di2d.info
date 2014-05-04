@@ -55,7 +55,6 @@ dependencies[] = module_filter
 dependencies[] = date_popup_authored
 dependencies[] = views_ui
 dependencies[] = admin_views
-dependencies[] = mobile_navigation
 dependencies[] = better_watchdog_ui
 dependencies[] = backup_migrate
 dependencies[] = captcha
