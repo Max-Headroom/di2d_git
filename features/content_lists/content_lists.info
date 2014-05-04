@@ -1,0 +1,15 @@
+name = Content lists
+description = Content  lists for use ove page
+core = 7.x
+package = DI2D
+project = content_lists
+dependencies[] = defaultconfig
+dependencies[] = image
+dependencies[] = views
+dependencies[] = views_content
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[image][] = list-thumbs
+features[image][] = sidebar-list-thumbs
+features[views_view][] = lists
+features_exclude[dependencies][ctools] = ctools

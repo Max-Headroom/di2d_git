@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * STARTER.
+ * Developer: Quentin Campbell (Max Headroom) info@maxheadroom.co.za
+ */
+/* * *************************************************************
+ * Drupal hooks
+ * ************************************************************* */
+
+/**
+ * Implements hook_init().
+ */
+function di2d_theme_init() {
+  drupal_add_css(drupal_get_path('module', 'di2d_theme') . '/css/di2d_theme.css', array('group' => CSS_THEME, 'every_page' => TRUE));
+}
