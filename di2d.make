@@ -35,16 +35,6 @@ projects[captcha][version] = "1"
 
 projects[caption_filter][version] = "1"
 
-; Please fill the following out. Type may be one of get, git, bzr or svn,
-; and url is the url of the download.
-projects[content_lists][download][type] = "git"
-projects[content_lists][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
-projects[content_lists][type] = "module"
-projects[content_lists][subdir] = "features"
-projects[content_lists][download][branch] = "7.x"
-;projects[content_lists][download][branch] = "d75f2034cc7ce1460f14b462d2db201333356a71"
-
-
 projects[date][version] = "2"
 
 projects[date_popup_authored][version] = "1"
@@ -53,14 +43,6 @@ projects[defaultconfig][version] = "1"
 projects[defaultconfig][patches][] = "http://drupal.org/files/fix-defaultconfig_rebuild_all.patch"
 
 projects[devel][version] = "1"
-
-; Please fill the following out. Type may be one of get, git, bzr or svn,
-; and url is the url of the download.
-projects[di2d_setup][download][type] = "git"
-projects[di2d_setup][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
-projects[di2d_setup][type] = "module"
-projects[di2d_setup][subdir] = "features"
-projects[di2d_setup][download][branch] = "7.x"
 
 projects[entity][version] = "1"
 
@@ -136,25 +118,23 @@ projects[panopoly_admin][version] = "1"
 
 projects[panopoly_core][version] = "1"
 
-; Please fill the following out. Type may be one of get, git, bzr or svn,
-; and url is the url of the download.
-projects[panopoly_di2d_wysiwyg][download][type] = "git"
-projects[panopoly_di2d_wysiwyg][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
-projects[panopoly_di2d_wysiwyg][type] = "module"
-projects[panopoly_di2d_wysiwyg][subdir] = "custom"
-projects[panopoly_di2d_wysiwyg][download][branch] = "7.x"
-
 projects[panopoly_images][version] = "1"
+projects[panopoly_images][subdir] = "modules/panopoly"
 
 projects[panopoly_magic][version] = "1"
+projects[panopoly_magic][subdir] = "modules/panopoly"
 
 projects[panopoly_pages][version] = "1"
+projects[panopoly_panes][subdir] = "modules/panopoly"
 
 projects[panopoly_theme][version] = "1"
+projects[panopoly_theme][subdir] = "modules/panopoly"
 
 projects[panopoly_users][version] = "1"
+projects[panopoly_users][subdir] = "modules/panopoly"
 
 projects[panopoly_widgets][version] = "1"
+projects[panopoly_widgets][subdir] = "modules/panopoly"
 
 projects[pathauto][version] = "1"
 projects[pathauto][patches][] = "http://drupal.org/files/pathauto-persist-936222-130-pathauto-state.patch"
@@ -192,13 +172,6 @@ projects[wysiwyg_filter][version] = "1"
 
 ; Themes
 projects[kalatheme][version] = "3"
-
-; Please fill the following out. Type may be one of get, git, bzr or svn,
-; and url is the url of the download.
-projects[di2d_base][download][type] = "git"
-projects[di2d_base][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
-projects[di2d_base][type] = "theme"
-projects[di2d_base][download][branch] = "7.x"
 
 ; Libraries
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
@@ -280,3 +253,25 @@ libraries[FirePHPCore][type] = "library"
 ;libraries[underscore][directory_name] = "underscore"
 ;libraries[underscore][type] = "library"
 
+;projects[content_lists][download][type] = "git"
+;projects[content_lists][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
+;projects[content_lists][type] = "module"
+;projects[content_lists][subdir] = "modules/features"
+;projects[content_lists][download][branch] = "7.x"
+
+;projects[di2d_setup][download][type] = "git"
+;projects[di2d_setup][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
+;projects[di2d_setup][type] = "module"
+;projects[di2d_setup][subdir] = "modules/features"
+;projects[di2d_setup][download][branch] = "7.x"
+
+;projects[di2d_base][download][type] = "git"
+;projects[di2d_base][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
+;projects[di2d_base][type] = "theme"
+;projects[di2d_base][download][branch] = "7.x"
+
+;projects[panopoly_di2d_wysiwyg][download][type] = "git"
+;projects[panopoly_di2d_wysiwyg][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
+;projects[panopoly_di2d_wysiwyg][type] = "module"
+;projects[panopoly_di2d_wysiwyg][subdir] = "modules/custom"
+;projects[panopoly_di2d_wysiwyg][download][branch] = "7.x"
