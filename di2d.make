@@ -33,7 +33,7 @@ projects[ctools][version] = "1.4"
 
 projects[captcha][version] = "1.0"
 
-projects[caption_filter][version] = "1.2+9-dev"
+projects[caption_filter][version] = "1.2+10-dev"
 
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
 ; and url is the url of the download.
