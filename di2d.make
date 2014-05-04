@@ -115,8 +115,10 @@ projects[panels_extra_styles][version] = "1"
 projects[panels_mini_ipe][version] = "1"
 
 projects[panopoly_admin][version] = "1"
+projects[panopoly_admin][subdir] = "panopoly"
 
 projects[panopoly_core][version] = "1"
+projects[panopoly_core][subdir] = "panopoly"
 
 projects[panopoly_images][version] = "1"
 projects[panopoly_images][subdir] = "panopoly"
@@ -125,7 +127,7 @@ projects[panopoly_magic][version] = "1"
 projects[panopoly_magic][subdir] = "panopoly"
 
 projects[panopoly_pages][version] = "1"
-projects[panopoly_panes][subdir] = "panopoly"
+projects[panopoly_pages][subdir] = "panopoly"
 
 projects[panopoly_theme][version] = "1"
 projects[panopoly_theme][subdir] = "panopoly"
