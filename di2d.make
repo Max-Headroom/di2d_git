@@ -142,7 +142,7 @@ projects[panopoly_di2d_wysiwyg][download][type] = "git"
 projects[panopoly_di2d_wysiwyg][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
 projects[panopoly_di2d_wysiwyg][type] = "module"
 projects[panopoly_di2d_wysiwyg][subdir] = "custom"
-projects[panopoly_di2d_wysiwyg][download][branch] = "7.3"
+projects[panopoly_di2d_wysiwyg][download][branch] = "7.x"
 
 projects[panopoly_images][version] = "1"
 
@@ -198,7 +198,7 @@ projects[kalatheme][version] = "3"
 projects[di2d_base][download][type] = "git"
 projects[di2d_base][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
 projects[di2d_base][type] = "theme"
-projects[di2d_base][download][branch] = "7.3"
+projects[di2d_base][download][branch] = "7.x"
 
 ; Libraries
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
