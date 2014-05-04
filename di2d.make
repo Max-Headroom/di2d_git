@@ -240,85 +240,56 @@ projects[wysiwyg_filter][subdir] = "contrib"
 ; Themes
 projects[kalatheme][version] = "3"
 
+projects[di2d_base][download][type] = "git"
+projects[di2d_base][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
+projects[di2d_base][type] = "theme"
+projects[di2d_base][download][branch] = "7.x"
+
 ; Libraries
-; Please fill the following out. Type may be one of get, git, bzr or svn,
-; and url is the url of the download.
 ;libraries[jquery][download][type] = "git"
 ;libraries[jquery][download][url] = "https://github.com/jquery/jquery.git"
 ;libraries[jquery][directory_name] = "jquery"
 ;libraries[jquery][type] = "library"
 
-; Please fill the following out. Type may be one of get, git, bzr or svn,
-; and url is the url of the download.
-;libraries[bootstrap][download][type] = ""
-;libraries[bootstrap][download][url] = ""
-;libraries[bootstrap][directory_name] = "bootstrap"
-;libraries[bootstrap][type] = "library"
+libraries[bootstrap][download][type] = "git"
+libraries[bootstrap][download][url] = " https://github.com/twbs/bootstrap.git"
+libraries[bootstrap][directory_name] = "bootstrap"
+libraries[bootstrap][type] = "library"
 
-; Please fill the following out. Type may be one of get, git, bzr or svn,
-; and url is the url of the download.
 libraries[ckeditor][download][type] = "get"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.0/ckeditor_4.4.0_standard.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
 libraries[ckeditor][type] = "library"
 
-; Please fill the following out. Type may be one of get, git, bzr or svn,
-; and url is the url of the download.
-;libraries[imagesloaded][download][type] = ""
-;libraries[imagesloaded][download][url] = ""
+;libraries[imagesloaded][download][type] = "git"
+;libraries[imagesloaded][download][url] = "https://github.com/desandro/imagesloaded.git"
 ;libraries[imagesloaded][directory_name] = "imagesloaded"
 ;libraries[imagesloaded][type] = "library"
 
-; Please fill the following out. Type may be one of get, git, bzr or svn,
-; and url is the url of the download.
-;libraries[backbone][download][type] = ""
-;libraries[backbone][download][url] = ""
-;libraries[backbone][directory_name] = "backbone"
-;libraries[backbone][type] = "library"
+libraries[modernizr][download][type] = "git"
+libraries[modernizr][download][url] = "https://github.com/Modernizr/Modernizr.git"
+libraries[modernizr][directory_name] = "modernizr"
+libraries[modernizr][type] = "library"
 
-; Please fill the following out. Type may be one of get, git, bzr or svn,
-; and url is the url of the download.
-;libraries[modernizr][download][type] = ""
-;libraries[modernizr][download][url] = ""
-;libraries[modernizr][directory_name] = "modernizr"
-;libraries[modernizr][type] = "library"
-
-; Please fill the following out. Type may be one of get, git, bzr or svn,
-; and url is the url of the download.
-;libraries[respondjs][download][type] = ""
-;libraries[respondjs][download][url] = ""
-;libraries[respondjs][directory_name] = "respondjs"
-;libraries[respondjs][type] = "library"
-
-
-; Please fill the following out. Type may be one of get, git, bzr or svn,
-; and url is the url of the download.
-;libraries[ace][download][type] = ""
-;libraries[ace][download][url] = ""
+;libraries[ace][download][type] = "git"
+;libraries[ace][download][url] = "https://github.com/ajaxorg/ace.git"
 ;libraries[ace][directory_name] = "ace"
 ;libraries[ace][type] = "library"
 
-; Please fill the following out. Type may be one of get, git, bzr or svn,
-; and url is the url of the download.
 libraries[FirePHPCore][download][type] = "get"
 libraries[FirePHPCore][download][url] = "http://www.firephp.org/DownloadRelease/FirePHPLibrary-FirePHPCore-0.3.2"
 libraries[FirePHPCore][directory_name] = "FirePHPCore"
 libraries[FirePHPCore][type] = "library"
 
+libraries[markitup][download][type] = "git"
+libraries[markitup][download][url] = "https://github.com/markitup/1.x.git"
+libraries[markitup][directory_name] = "markitup"
+libraries[markitup][type] = "library"
 
-; Please fill the following out. Type may be one of get, git, bzr or svn,
-; and url is the url of the download.
-;libraries[markitup][download][type] = ""
-;libraries[markitup][download][url] = ""
-;libraries[markitup][directory_name] = "markitup"
-;libraries[markitup][type] = "library"
 
-; Please fill the following out. Type may be one of get, git, bzr or svn,
-; and url is the url of the download.
-;libraries[underscore][download][type] = ""
-;libraries[underscore][download][url] = ""
-;libraries[underscore][directory_name] = "underscore"
-;libraries[underscore][type] = "library"
+
+
+;********custom modules auto inserted by git*************
 
 ;projects[content_lists][download][type] = "git"
 ;projects[content_lists][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
@@ -331,11 +302,6 @@ libraries[FirePHPCore][type] = "library"
 ;projects[di2d_setup][type] = "module"
 ;projects[di2d_setup][subdir] = "modules/features"
 ;projects[di2d_setup][download][branch] = "7.x"
-
-;projects[di2d_base][download][type] = "git"
-;projects[di2d_base][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
-;projects[di2d_base][type] = "theme"
-;projects[di2d_base][download][branch] = "7.x"
 
 ;projects[panopoly_di2d_wysiwyg][download][type] = "git"
 ;projects[panopoly_di2d_wysiwyg][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
