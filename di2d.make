@@ -2,7 +2,7 @@
 core = 7.x
 
 api = 2
-projects[drupal][version] = "7.27"
+projects[drupal][version] = "7"
 
 ; Profiles
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
@@ -13,27 +13,27 @@ projects[di2d][type] = "profile"
 projects[di2d][download][branch] = "7.x"
 
 ; Modules
-projects[views_bulk_operations][version] = "3.2"
+projects[views_bulk_operations][version] = "3"
 
-projects[admin_menu][version] = "3.0-rc4"
+projects[admin_menu][version] = "3"
 
-projects[admin_views][version] = "1.2"
+projects[admin_views][version] = "1"
 
-projects[backports][version] = "1.0-alpha1"
+projects[backports][version] = "1"
 
-projects[backup_migrate][version] = "2.8"
+projects[backup_migrate][version] = "2"
 
-projects[better_watchdog_ui][version] = "2.0"
+projects[better_watchdog_ui][version] = "2"
 
-projects[bootstrap_library][version] = "1.2"
+projects[bootstrap_library][version] = "1"
 
-projects[breakpoints][version] = "1.1"
+projects[breakpoints][version] = "1"
 
-projects[ctools][version] = "1.4"
+projects[ctools][version] = "1"
 
-projects[captcha][version] = "1.0"
+projects[captcha][version] = "1"
 
-projects[caption_filter][version] = "1.2+10-dev"
+projects[caption_filter][version] = "1"
 
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
 ; and url is the url of the download.
@@ -42,17 +42,17 @@ projects[content_lists][download][url] = "https://github.com/Max-Headroom/di2d_g
 projects[content_lists][type] = "module"
 projects[content_lists][subdir] = "features"
 projects[content_lists][download][branch] = "7.x"
-projects[content_lists][download][branch] = "d75f2034cc7ce1460f14b462d2db201333356a71"
+;projects[content_lists][download][branch] = "d75f2034cc7ce1460f14b462d2db201333356a71"
 
 
-projects[date][version] = "2.7"
+projects[date][version] = "2"
 
-projects[date_popup_authored][version] = "1.1"
+projects[date_popup_authored][version] = "1"
 
-projects[defaultconfig][version] = "1.0-alpha9"
+projects[defaultconfig][version] = "1"
 projects[defaultconfig][patches][] = "http://drupal.org/files/fix-defaultconfig_rebuild_all.patch"
 
-projects[devel][version] = "1.5"
+projects[devel][version] = "1"
 
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
 ; and url is the url of the download.
@@ -62,79 +62,79 @@ projects[di2d_setup][type] = "module"
 projects[di2d_setup][subdir] = "features"
 projects[di2d_setup][download][branch] = "7.x"
 
-projects[entity][version] = "1.5"
+projects[entity][version] = "1"
 
-projects[entityreference][version] = "1.1"
+projects[entityreference][version] = "1"
 
-projects[fape][version] = "1.2"
+projects[fape][version] = "1"
 
-projects[features][version] = "2.0"
+projects[features][version] = "2"
 
-projects[features_override][version] = "2.0-rc1+0-dev"
+projects[features_override][version] = "2"
 
-projects[fences][version] = "1.0+6-dev"
+projects[fences][version] = "1"
 
-projects[field_group][version] = "1.3"
+projects[field_group][version] = "1"
 
-projects[fieldable_panels_panes][version] = "1.5"
+projects[fieldable_panels_panes][version] = "1"
 
-projects[file_entity][version] = "2.0-alpha3"
+projects[file_entity][version] = "2"
 
-projects[globalredirect][version] = "1.5+3-dev"
+projects[globalredirect][version] = "1"
 
-projects[google_analytics][version] = "2.x-dev"
+projects[google_analytics][version] = "2"
 
-projects[honeypot][version] = "1.16"
+projects[honeypot][version] = "1"
 
-projects[panels][version] = "3.4"
+projects[panels][version] = "3"
 
-projects[image_resize_filter][version] = "1.14"
+projects[image_resize_filter][version] = "1"
 
-projects[jquery_update][version] = "2.4"
+projects[jquery_update][version] = "2"
 
-projects[libraries][version] = "2.2"
+projects[libraries][version] = "2"
 
-projects[lightbox2][version] = "1.0-beta1+9-dev"
+projects[lightbox2][version] = "1"
 
-projects[link][version] = "1.2"
+projects[link][version] = "1"
 
-projects[linkit][version] = "2.6"
+projects[linkit][version] = "2"
 
-projects[live_css][version] = "2.12+8-dev"
+projects[live_css][version] = "2"
 
-projects[manualcrop][version] = "1.4"
+projects[manualcrop][version] = "1"
 
-projects[media][version] = "2.0-alpha3+79-dev"
+projects[media][version] = "2"
 
-projects[media_vimeo][version] = "2.0"
+projects[media_vimeo][version] = "2"
 
-projects[media_youtube][version] = "2.0-rc4"
+projects[media_youtube][version] = "2"
 
-projects[menu_block][version] = "2.3"
+projects[menu_block][version] = "2"
 
-projects[metatag][version] = "1.0-beta9"
+projects[metatag][version] = "1"
 
-projects[mobile_navigation][version] = "1.2"
+projects[mobile_navigation][version] = "1"
 
-projects[modernizr][version] = "3.2"
+projects[modernizr][version] = "3"
 
-projects[module_filter][version] = "1.8"
+projects[module_filter][version] = "1"
 
-projects[nice_menus][version] = "2.5"
+projects[nice_menus][version] = "2"
 
-projects[panelizer][version] = "3.1"
+projects[panelizer][version] = "3"
 
-projects[panels_breadcrumbs][version] = "2.1"
+projects[panels_breadcrumbs][version] = "2"
 
-projects[panels_extra_layouts][version] = "2.0"
+projects[panels_extra_layouts][version] = "2"
 
-projects[panels_extra_styles][version] = "1.1"
+projects[panels_extra_styles][version] = "1"
 
-projects[panels_mini_ipe][version] = "1.0-beta2+3-dev"
+projects[panels_mini_ipe][version] = "1"
 
-projects[panopoly_admin][version] = "1.5"
+projects[panopoly_admin][version] = "1"
 
-projects[panopoly_core][version] = "1.5"
+projects[panopoly_core][version] = "1"
 
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
 ; and url is the url of the download.
@@ -142,63 +142,63 @@ projects[panopoly_di2d_wysiwyg][download][type] = "git"
 projects[panopoly_di2d_wysiwyg][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
 projects[panopoly_di2d_wysiwyg][type] = "module"
 projects[panopoly_di2d_wysiwyg][subdir] = "custom"
-projects[panopoly_di2d_wysiwyg][download][branch] = "master"
+projects[panopoly_di2d_wysiwyg][download][branch] = "7.3"
 
-projects[panopoly_images][version] = "1.5"
+projects[panopoly_images][version] = "1"
 
-projects[panopoly_magic][version] = "1.5"
+projects[panopoly_magic][version] = "1"
 
-projects[panopoly_pages][version] = "1.5"
+projects[panopoly_pages][version] = "1"
 
-projects[panopoly_theme][version] = "1.5"
+projects[panopoly_theme][version] = "1"
 
-projects[panopoly_users][version] = "1.5"
+projects[panopoly_users][version] = "1"
 
-projects[panopoly_widgets][version] = "1.5"
+projects[panopoly_widgets][version] = "1"
 
-projects[pathauto][version] = "1.2"
+projects[pathauto][version] = "1"
 projects[pathauto][patches][] = "http://drupal.org/files/pathauto-persist-936222-130-pathauto-state.patch"
 
-projects[pm_existing_pages][version] = "1.4"
+projects[pm_existing_pages][version] = "1"
 
-projects[save_draft][version] = "1.4"
+projects[save_draft][version] = "1"
 
-projects[simple_gmap][version] = "1.2"
+projects[simple_gmap][version] = "1"
 
-projects[strongarm][version] = "2.0"
+projects[strongarm][version] = "2"
 
-projects[tablefield][version] = "2.2"
+projects[tablefield][version] = "2"
 projects[tablefield][patches][] = "http://drupal.org/files/tablefield_event_click_conflict.patch"
 
-projects[token][version] = "1.5"
+projects[token][version] = "1"
 
-projects[user_picture_field][version] = "1.0-rc1"
+projects[user_picture_field][version] = "1"
 
-projects[uuid][version] = "1.0-alpha5"
+projects[uuid][version] = "1"
 
-projects[variable][version] = "2.5"
+projects[variable][version] = "2"
 
-projects[views][version] = "3.7"
+projects[views][version] = "3"
 projects[views][patches][] = "http://drupal.org/files/views-exposed-sorts-2037469-1.patch"
 
-projects[views_autocomplete_filters][version] = "1.1"
+projects[views_autocomplete_filters][version] = "1"
 
-projects[views_bootstrap][version] = "3.1"
+projects[views_bootstrap][version] = "3"
 
-projects[wysiwyg][version] = "2.2"
+projects[wysiwyg][version] = "2"
 projects[wysiwyg][patches][] = "http://drupal.org/files/wysiwyg-1802394-4.patch"
 
-projects[wysiwyg_filter][version] = "1.6-rc2"
+projects[wysiwyg_filter][version] = "1"
 
 ; Themes
-projects[kalatheme][version] = "3.0-rc2+83-dev"
+projects[kalatheme][version] = "3"
 
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
 ; and url is the url of the download.
 projects[di2d_base][download][type] = "git"
 projects[di2d_base][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
 projects[di2d_base][type] = "theme"
-projects[di2d_base][download][branch] = "master"
+projects[di2d_base][download][branch] = "7.3"
 
 ; Libraries
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
