@@ -19,6 +19,9 @@ projects[views_bulk_operations][subdir] = "contrib"
 projects[admin_menu][version] = "3"
 projects[admin_menu][subdir] = "contrib"
 
+projects[admin_menu_dropdown][version] = "3"
+projects[admin_menu_dropdown][subdir] = "contrib"
+
 projects[admin_views][version] = "1"
 projects[admin_views][subdir] = "contrib"
 

@@ -48,6 +48,7 @@ dependencies[] = panopoly_di2d_wysiwyg
 dependencies[] = breakpoints
 dependencies[] = backports
 dependencies[] = admin_menu
+dependencies[] = admin_menu_dropdown
 dependencies[] = admin_devel
 dependencies[] = admin_menu_toolbar
 dependencies[] = save_draft
