@@ -240,10 +240,7 @@ projects[wysiwyg_filter][subdir] = "contrib"
 ; Themes
 projects[kalatheme][version] = "3"
 
-projects[di2d_base][download][type] = "git"
-projects[di2d_base][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
-projects[di2d_base][type] = "theme"
-projects[di2d_base][download][branch] = "7.x"
+
 
 ; Libraries
 ;libraries[jquery][download][type] = "git"
@@ -251,10 +248,10 @@ projects[di2d_base][download][branch] = "7.x"
 ;libraries[jquery][directory_name] = "jquery"
 ;libraries[jquery][type] = "library"
 
-libraries[bootstrap][download][type] = "git"
-libraries[bootstrap][download][url] = " https://github.com/twbs/bootstrap.git"
-libraries[bootstrap][directory_name] = "bootstrap"
-libraries[bootstrap][type] = "library"
+;libraries[bootstrap][download][type] = "git"
+;libraries[bootstrap][download][url] = " https://github.com/twbs/bootstrap.git"
+;libraries[bootstrap][directory_name] = "bootstrap"
+;libraries[bootstrap][type] = "library"
 
 libraries[ckeditor][download][type] = "get"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.0/ckeditor_4.4.0_standard.zip"
@@ -308,3 +305,8 @@ libraries[markitup][type] = "library"
 ;projects[panopoly_di2d_wysiwyg][type] = "module"
 ;projects[panopoly_di2d_wysiwyg][subdir] = "modules/custom"
 ;projects[panopoly_di2d_wysiwyg][download][branch] = "7.x"
+
+;projects[di2d_base][download][type] = "git"
+;projects[di2d_base][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
+;projects[di2d_base][type] = "theme"
+;projects[di2d_base][download][branch] = "7.x"
