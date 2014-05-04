@@ -8,7 +8,7 @@ projects[drupal][version] = "7.27"
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
 ; and url is the url of the download.
 projects[di2d][download][type] = "git"
-projects[di2d][download][url] = "https://github.com/Max-Headroom/di2d.git"
+projects[di2d][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
 projects[di2d][type] = "profile"
 projects[di2d][download][branch] = "7.x"
 
@@ -38,7 +38,7 @@ projects[caption_filter][version] = "1.2+9-dev"
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
 ; and url is the url of the download.
 projects[content_lists][download][type] = "git"
-projects[content_lists][download][url] = "https://github.com/Max-Headroom/di2d.git"
+projects[content_lists][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
 projects[content_lists][type] = "module"
 projects[content_lists][subdir] = "features"
 projects[content_lists][download][branch] = "7.x"
@@ -57,7 +57,7 @@ projects[devel][version] = "1.5"
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
 ; and url is the url of the download.
 projects[di2d_setup][download][type] = "git"
-projects[di2d_setup][download][url] = "https://github.com/Max-Headroom/di2d.git"
+projects[di2d_setup][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
 projects[di2d_setup][type] = "module"
 projects[di2d_setup][subdir] = "features"
 projects[di2d_setup][download][branch] = "7.x"
@@ -139,7 +139,7 @@ projects[panopoly_core][version] = "1.5"
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
 ; and url is the url of the download.
 projects[panopoly_di2d_wysiwyg][download][type] = "git"
-projects[panopoly_di2d_wysiwyg][download][url] = "https://github.com/Max-Headroom/di2d.git"
+projects[panopoly_di2d_wysiwyg][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
 projects[panopoly_di2d_wysiwyg][type] = "module"
 projects[panopoly_di2d_wysiwyg][subdir] = "custom"
 projects[panopoly_di2d_wysiwyg][download][branch] = "master"
@@ -196,7 +196,7 @@ projects[kalatheme][version] = "3.0-rc2+83-dev"
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
 ; and url is the url of the download.
 projects[di2d_base][download][type] = "git"
-projects[di2d_base][download][url] = "https://github.com/Max-Headroom/di2d.git"
+projects[di2d_base][download][url] = "https://github.com/Max-Headroom/di2d_git.git"
 projects[di2d_base][type] = "theme"
 projects[di2d_base][download][branch] = "master"
 
