@@ -190,7 +190,7 @@ projects[panopoly_widgets][subdir] = "panopoly"
 
 projects[pathauto][version] = "1"
 projects[pathauto][patches][] = "http://drupal.org/files/pathauto-persist-936222-130-pathauto-state.patch"
-projects[][subdir] = "contrib"
+projects[pathauto][subdir] = "contrib"
 
 projects[pm_existing_pages][version] = "1"
 projects[pm_existing_pages][subdir] = "contrib"
