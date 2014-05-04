@@ -119,22 +119,22 @@ projects[panopoly_admin][version] = "1"
 projects[panopoly_core][version] = "1"
 
 projects[panopoly_images][version] = "1"
-projects[panopoly_images][subdir] = "modules/panopoly"
+projects[panopoly_images][subdir] = "panopoly"
 
 projects[panopoly_magic][version] = "1"
-projects[panopoly_magic][subdir] = "modules/panopoly"
+projects[panopoly_magic][subdir] = "panopoly"
 
 projects[panopoly_pages][version] = "1"
-projects[panopoly_panes][subdir] = "modules/panopoly"
+projects[panopoly_panes][subdir] = "panopoly"
 
 projects[panopoly_theme][version] = "1"
-projects[panopoly_theme][subdir] = "modules/panopoly"
+projects[panopoly_theme][subdir] = "panopoly"
 
 projects[panopoly_users][version] = "1"
-projects[panopoly_users][subdir] = "modules/panopoly"
+projects[panopoly_users][subdir] = "panopoly"
 
 projects[panopoly_widgets][version] = "1"
-projects[panopoly_widgets][subdir] = "modules/panopoly"
+projects[panopoly_widgets][subdir] = "panopoly"
 
 projects[pathauto][version] = "1"
 projects[pathauto][patches][] = "http://drupal.org/files/pathauto-persist-936222-130-pathauto-state.patch"
