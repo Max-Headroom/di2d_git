@@ -46,7 +46,8 @@ function di2d_form_install_configure_form_alter(&$form, $form_state) {
   $form['admin_account']['account']['name']['#default_value'] = 'Admin';
   $form['server_settings']['site_default_country']['#default_value'] = 'ZA';
   $form['server_settings']['date_default_timezone']['#default_value'] = 'Africa/Johannesburg'; // My Country!
+  unset($form['server_settings']['date_default_timezone']['#attributes']);
 
-    $form['site_information']['site_mail']['#default_value'] = 'admin@maxheadroom.co.za';
-    $form['admin_account']['account']['mail']['#default_value'] = 'admin@maxheadroom.co.za';
+  $form['site_information']['site_mail']['#default_value'] = 'admin@maxheadroom.co.za';
+  $form['admin_account']['account']['mail']['#default_value'] = 'admin@maxheadroom.co.za';
 }
