@@ -137,8 +137,8 @@ projects[menu_block][subdir] = "contrib"
 projects[metatag][version] = "1"
 projects[metatag][subdir] = "contrib"
 
-;projects[mobile_navigation][version] = "1"
-;projects[mobile_navigation][subdir] = "contrib"
+projects[mobile_navigation][version] = "1"
+projects[mobile_navigation][subdir] = "contrib"
 
 projects[modernizr][version] = "3"
 projects[modernizr][subdir] = "contrib"
