@@ -1,7 +1,7 @@
 <?php
 
 /*
- * To change this license header, choose License Headers in Project Properties.
+ * @file
  */
 
 $plugin = array(
@@ -86,5 +86,29 @@ function bootstrap_main_menu_admin_info($subtype, $conf, $contexts) {
   $block = new stdClass;
   $block->title = $conf['override_title'] ? $conf['override_title_text'] : '';
   $block->content = '';
+  return $block;
+}
+
+function bootstrap_main_menu_render($subtype, $conf, $panel_args, $context = NULL) {
+  $items = array();
+  switch ($conf['menu_type']) {
+    case 'main':
+      $tree = menu_tree_all_data('main-menu');
+      dpm($tree);
+      break;
+
+    case 'section':
+      foreach ($conf['section_menu_array'] as $key => $value) {
+        $items['section' . $key] = $value;
+      }
+      break;
+  }
+
+  $block = new stdClass();
+
+  // initial content is blank
+  $block->title = t('This is my title!'); // This will be overridden by the user within the panel options.
+  $block->content = theme('bootstrap_main_menu', $items);
+
   return $block;
 }
