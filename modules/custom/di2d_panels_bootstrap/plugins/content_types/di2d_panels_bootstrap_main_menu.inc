@@ -19,7 +19,6 @@ $plugin = array(
     ),
     'all contexts' => TRUE,
 );
-dpm($plugin);
 
 function bootstrap_main_menu_edit_form($form, &$form_state) {
   $conf = $form_state['conf'];
@@ -95,7 +94,10 @@ function bootstrap_main_menu_render($subtype, $conf, $panel_args, $context = NUL
   switch ($conf['menu_type']) {
     case 'main':
       $tree = menu_tree_all_data('main-menu');
-      dpm($tree);
+      dpm($tree, 'menu');
+      foreach ($tree as $branch) {
+        $items[$branch['link']['link_path']] = $branch['link']['link_title'];
+      }
       break;
 
     case 'section':
@@ -108,8 +110,8 @@ function bootstrap_main_menu_render($subtype, $conf, $panel_args, $context = NUL
   $block = new stdClass();
 
   // initial content is blank
-  $block->title = t('This is my title!'); // This will be overridden by the user within the panel options.
-  $block->content = theme('bootstrap_main_menu', $items);
+  $block->title = t('Main menu'); // This will be overridden by the user within the panel options.
+  $block->content = theme('bootstrap_main_menu', array('items' => $items));
 
   return $block;
 }

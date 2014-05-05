@@ -1,9 +1,5 @@
 
 
-/*
-* @file
-*/
-
 <div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
   <div class="container">
     <div class="navbar-header">
@@ -14,7 +10,7 @@
         <span class="icon-bar"></span>
       </button>
     </div>
-
+    <?php dpm(array($varuables, $items), 'template'); ?>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav nav-justified">
         <?php foreach ($items as $link => $title): ?>
