@@ -19,6 +19,7 @@ $plugin = array(
     ),
     'all contexts' => TRUE,
 );
+dpm($plugin);
 
 function bootstrap_main_menu_edit_form($form, &$form_state) {
   $conf = $form_state['conf'];
