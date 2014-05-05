@@ -4,7 +4,7 @@
  * Implements hook_ctools_plugin_directory()
  */
 function di2d_panels_bootstrap_ctools_plugin_directory($module, $plugin) {
-  if ($module == "panels" && in_array($plugin, array('layouts', 'styles'))) {
+  if ($module == "panels" && in_array($plugin, array('layouts', 'styles', 'content_types'))) {
     return "plugins/$plugin";
   }
 }
