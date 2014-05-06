@@ -21,6 +21,8 @@ function theme_bootstrap_wraps_render_region($vars) {
   $content = $vars['panes'];
   $settings = $vars['settings'];
 
+  $affix = _bootstrap_wraps_attach_affix($settings['pane_style'], $settings['offset_top'], $settings['offset_bottom']);
+
   $settings['attributes'] = '';
   $settings['attributes'] .= _bootstrap_wraps_get_styles($settings['devices']);
   $settings['attributes'] .= _bootstrap_wraps_get_styles($settings['pane_style']);
@@ -48,6 +50,8 @@ function theme_bootstrap_wraps_render_region($vars) {
 function theme_bootstrap_wraps_render_pane($vars) {
   $content = &$vars['content'];
   $settings = $vars['settings'];
+
+  $affix = _bootstrap_wraps_attach_affix($settings['pane_style'], $settings['offset_top'], $settings['offset_bottom']);
 
   // This is needed to prevent throwing an error in php 5.5+
   if (!isset($content->css_class)) {
@@ -91,6 +95,7 @@ function bootstrap_wraps_pane_settings_form($style_settings) {
       'well' => 'Well',
       'pane' => 'Pane',
       'alert' => 'Alert',
+      'bootstrap-wraps-affix' => 'Affix',
   );
 
   $form['pane_style'] = array(
@@ -102,7 +107,60 @@ function bootstrap_wraps_pane_settings_form($style_settings) {
       '#default_value' => $pane_style_default_value,
   );
 
+  $form['affix'] = array(
+      '#collapsed' => '0',
+      '#type' => 'fieldset',
+      '#collapsible' => '0',
+      '#title' => t('Affix settings'),
+      '#states' => array(
+          'visible' => array(
+              ':input[name="settings[pane_style][bootstrap-wraps-affix]"]' => array('checked' => TRUE),
+          ),
+      ),
+  );
+
+  $form['affix']['offset_top'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Offset Top (px)'),
+      '#default_value' => (!empty($style_settings['offset_top'])) ? $style_settings['offset_top'] : 0,
+      '#prefix' => '<div class="well">',
+      '#suffix' => '</div>',
+  );
+  $form['affix']['offset_bottom'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Offset Bottom (px)'),
+      '#default_value' => (!empty($style_settings['offset_bottom'])) ? $style_settings['offset_bottom'] : 0,
+      '#prefix' => '<div class="well">',
+      '#suffix' => '</div>',
+  );
   return $form;
+}
+
+/**
+ * Add affix JS.
+ *
+ * @return bool
+ *   If there is an affix.
+ */
+function _bootstrap_wraps_attach_affix($styles, $offset_top, $offset_bottom) {
+  if (isset($styles['di2d-affix'])) {
+    $settings = array(
+        'offset_top' => $offset_top,
+        'offset_bottom' => $offset_bottom,
+    );
+
+    $jsdata = array(
+        'file' => drupal_get_path('module', 'di2d_panels_bootstrap') . '/panels/styles/bootstrap_wraps/bootstrap_affix.js',
+        'settings' => $settings,
+    );
+
+    drupal_add_js($data = $jsdata);
+
+    return TRUE;
+  }
+  else {
+    return FALSE;
+  }
 }
 
 /**
