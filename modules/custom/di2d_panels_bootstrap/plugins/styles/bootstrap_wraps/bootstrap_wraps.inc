@@ -21,7 +21,7 @@ function theme_bootstrap_wraps_render_region($vars) {
   $content = $vars['panes'];
   $settings = $vars['settings'];
 
-  $affix = _bootstrap_wraps_attach_affix($settings['pane_style'], $settings['offset_top'], $settings['offset_bottom']);
+  $affix = _bootstrap_wraps_attach_affix($settings['pane_style'], $settings['affix']['offset_top'], $settings['affix']['offset_bottom']);
 
   $settings['attributes'] = '';
   $settings['attributes'] .= _bootstrap_wraps_get_styles($settings['devices']);
@@ -38,10 +38,15 @@ function theme_bootstrap_wraps_render_region($vars) {
   // Wrap
   if (!empty($output)) {
     $content_wrapper = _bootstrap_wraps_wrapper($settings);
-    $output = $content_wrapper['prefix'] . $output . $content_wrapper['suffix'];
+    $wrapped_output = $affix;
+    $wrapped_output .= $content_wrapper['prefix'] . $output . $content_wrapper['suffix'];
+
+    if (isset($affix) && $affix) {
+      $wrapped_output .= '</div>';
+    }
   }
 
-  return $output;
+  return $wrapped_output;
 }
 
 /**
@@ -50,8 +55,6 @@ function theme_bootstrap_wraps_render_region($vars) {
 function theme_bootstrap_wraps_render_pane($vars) {
   $content = &$vars['content'];
   $settings = $vars['settings'];
-
-  $affix = _bootstrap_wraps_attach_affix($settings['pane_style'], $settings['offset_top'], $settings['offset_bottom']);
 
   // This is needed to prevent throwing an error in php 5.5+
   if (!isset($content->css_class)) {
@@ -95,7 +98,7 @@ function bootstrap_wraps_pane_settings_form($style_settings) {
       'well' => 'Well',
       'pane' => 'Pane',
       'alert' => 'Alert',
-      'bootstrap-wraps-affix' => 'Affix',
+      'affix' => 'Affix',
   );
 
   $form['pane_style'] = array(
@@ -114,7 +117,7 @@ function bootstrap_wraps_pane_settings_form($style_settings) {
       '#title' => t('Affix settings'),
       '#states' => array(
           'visible' => array(
-              ':input[name="settings[pane_style][bootstrap-wraps-affix]"]' => array('checked' => TRUE),
+              ':input[name="settings[pane_style][affix]"]' => array('checked' => TRUE),
           ),
       ),
   );
@@ -122,14 +125,14 @@ function bootstrap_wraps_pane_settings_form($style_settings) {
   $form['affix']['offset_top'] = array(
       '#type' => 'textfield',
       '#title' => t('Offset Top (px)'),
-      '#default_value' => (!empty($style_settings['offset_top'])) ? $style_settings['offset_top'] : 0,
+      '#default_value' => (!empty($style_settings['affix']['offset_top'])) ? $style_settings['affix']['offset_top'] : '',
       '#prefix' => '<div class="well">',
       '#suffix' => '</div>',
   );
   $form['affix']['offset_bottom'] = array(
       '#type' => 'textfield',
       '#title' => t('Offset Bottom (px)'),
-      '#default_value' => (!empty($style_settings['offset_bottom'])) ? $style_settings['offset_bottom'] : 0,
+      '#default_value' => (!empty($style_settings['affix']['offset_bottom'])) ? $style_settings['affix']['offset_bottom'] : '',
       '#prefix' => '<div class="well">',
       '#suffix' => '</div>',
   );
@@ -143,23 +146,22 @@ function bootstrap_wraps_pane_settings_form($style_settings) {
  *   If there is an affix.
  */
 function _bootstrap_wraps_attach_affix($styles, $offset_top, $offset_bottom) {
-  if (isset($styles['di2d-affix'])) {
-    $settings = array(
-        'offset_top' => $offset_top,
-        'offset_bottom' => $offset_bottom,
-    );
 
-    $jsdata = array(
-        'file' => drupal_get_path('module', 'di2d_panels_bootstrap') . '/panels/styles/bootstrap_wraps/bootstrap_affix.js',
-        'settings' => $settings,
-    );
+  if (isset($styles['affix'])) {
+    //<div data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+    $affix_styles = '<div';
+    $affix_styles .= ' data-spy="affix"';
+    $affix_styles .= isset($offset_top) ? ' data-offset-top="' . $offset_top . '"' : 0;
 
-    drupal_add_js($data = $jsdata);
+    if (isset($offset_bottom) && $offset_bottom) {
+      $affix_styles .= ' data-offset-bottom = "' . $offset_bottom . '"';
+    }
+    $affix_styles .= '>';
 
-    return TRUE;
+    return $affix_styles;
   }
   else {
-    return FALSE;
+    return '';
   }
 }
 
@@ -173,6 +175,10 @@ function _bootstrap_wraps_get_styles($styles = array()) {
   if (isset($styles)) {
     foreach ($styles as $key => $class) {
       if ($class === 0) {
+        unset($styles[$key]);
+      }
+
+      if ($class === 'affix') {
         unset($styles[$key]);
       }
     }
