@@ -23,21 +23,21 @@
       });
 
       /* affix the navbar after scroll below header */
-      $('#nav').affix({
-        offset: {
-          top: $('header').height()
-        }
-      });
+//      $('#nav').affix({
+//        offset: {
+//          top: $('header').height()
+//        }
+//      });
 
       /*add class to section1 so that height can be altered*/
-      $('#nav').on('affix.bs.affix', function() {
-        $('#section1').addClass('nav-affixed');
-      });
+//      $('#nav').on('affix.bs.affix', function() {
+//        $('#section1').addClass('nav-affixed');
+//      });
 
       /*remove class to section1 so that height can be altered*/
-      $('#nav').on('affix-top.bs.affix', function() {
-        $('#section1').removeClass('nav-affixed');
-      });
+//      $('#nav').on('affix-top.bs.affix', function() {
+//        $('#section1').removeClass('nav-affixed');
+//      });
 
       /* highlight the top nav as scrolling occurs */
       $('body').scrollspy({target: '#nav'});
