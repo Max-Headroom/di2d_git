@@ -78,7 +78,6 @@ dependencies[] = uuid
 dependencies[] = variable
 dependencies[] = metatag
 dependencies[] = features_override
-dependencies[] = di2d_theme
 dependencies[] = bootstrap_library
 dependencies[] = di2d_panels_bootstrap
 dependencies[] = views_bootstrap

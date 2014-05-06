@@ -1,7 +1,6 @@
-name = DI2D Base 
-description = A Kalatheme subtheme powered by Twitter Bootstrap & Science. 
-base theme = kalatheme 
-core = 7.x 
+name = DI2D Base
+description = Common settings and styles. Called by other themes. No need to enable.
+core = 7.x
 
 regions[header] = Header
 regions[header2] = Header region 2
@@ -11,9 +10,7 @@ regions[footer]  = Footer
 
 settings[toggle_logo] = 0
 
-stylesheets[all][] = css/main.css
-
-stylesheets[all][] = css/font-awesome.min.css
+stylesheets[all][] = css/di2d_base.css
 
 scripts[] = scripts/di2d-base.js
 
