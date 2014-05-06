@@ -22,12 +22,12 @@ $plugin = array(
 
 function bootstrap_main_menu_edit_form($form, &$form_state) {
   $conf = $form_state['conf'];
+
   $form['affix'] = array(
       '#type' => 'item',
       '#title' => t('Affix menu'),
       '#description' => t('To affix menu, use Bootstrap affix style setting.'),
   );
-
   $form['menu_type'] = array(
       '#type' => 'select',
       '#title' => t('Menu type'),
@@ -37,11 +37,10 @@ function bootstrap_main_menu_edit_form($form, &$form_state) {
           'section' => 'Section anchor menu',
       //'custom' => 'Custom menu links',
       ),
-      '#default_value' => $conf('menu_type'),
+      '#default_value' => $conf['menu_type'],
   );
-
   $form['section_menu_text'] = array(
-      '#description' => t('Enter each menu item on a new line. In the form of section number|Item name'),
+      '#description' => t('Enter each menu item on a new line. In the form of section number|Item name. '),
       '#type' => 'textarea',
       '#default_value' => $conf['section_menu_text'],
       '#title' => t('Menu sections'),
@@ -60,23 +59,25 @@ function bootstrap_main_menu_edit_form_submit($form, &$form_state) {
   $form_state['conf']['menu_type'] = $form_state['values']['menu_type'];
   $form_state['conf']['section_menu_text'] = $form_state['values']['section_menu_text'];
 
-  $values = array();
-  $list = explode("\n", $form_state['values']['section_menu_text']);
-  $list = array_map('trim', $list);
-  $list = array_filter($list, 'strlen');
+  if (isset($form_state['values']['section_menu_text'])) {
+    $values = array();
+    $list = explode("\n", $form_state['values']['section_menu_text']);
+    $list = array_map('trim', $list);
+    $list = array_filter($list, 'strlen');
 
-  foreach ($list as $position => $text) {
-    $value = $key = FALSE;
+    foreach ($list as $position => $text) {
+      $value = $key = FALSE;
 
-    // Check for an explicit key.
-    $matches = array();
-    if (preg_match('/(.*)\|(.*)/', $text, $matches)) {
-      $key = $matches[1];
-      $value = $matches[2];
+      // Check for an explicit key.
+      $matches = array();
+      if (preg_match('/(.*)\|(.*)/', $text, $matches)) {
+        $key = $matches[1];
+        $value = $matches[2];
+      }
+      $values[$key] = $value;
     }
-    $values[$key] = $value;
+    $form_state['conf']['section_menu_array'] = $values;
   }
-  $form_state['conf']['section_menu_array'] = $values;
 }
 
 /**
@@ -94,7 +95,6 @@ function bootstrap_main_menu_render($subtype, $conf, $panel_args, $context = NUL
   switch ($conf['menu_type']) {
     case 'main':
       $tree = menu_tree_all_data('main-menu');
-      dpm($tree, 'menu');
       foreach ($tree as $branch) {
         $items[$branch['link']['link_path']] = $branch['link']['link_title'];
       }
@@ -102,7 +102,7 @@ function bootstrap_main_menu_render($subtype, $conf, $panel_args, $context = NUL
 
     case 'section':
       foreach ($conf['section_menu_array'] as $key => $value) {
-        $items['section' . $key] = $value;
+        $items['/#section' . $key] = $value;
       }
       break;
   }

@@ -10,13 +10,9 @@
         <span class="icon-bar"></span>
       </button>
     </div>
-    <?php dpm(array($varuables, $items), 'template'); ?>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav nav-justified">
-        <?php foreach ($items as $link => $title): ?>
-          <li><a href="<?php print $link; ?>" data-toggle="collapse" data-target=".navbar-collapse"><?php print $title; ?></a></li>
-          <li><a href="<?php print $link; ?>" data-toggle="collapse" data-target=".navbar-collapse"><?php print $title; ?></a></li>
-          <li><a href="<?php print $link; ?>" data-toggle="collapse" data-target=".navbar-collapse"><?php print $title; ?></a></li>
+        <?php foreach ($variables['items'] as $link => $title): ?>
           <li><a href="<?php print $link; ?>" data-toggle="collapse" data-target=".navbar-collapse"><?php print $title; ?></a></li>
         <?php endforeach; ?>
       </ul>

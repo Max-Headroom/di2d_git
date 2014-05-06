@@ -164,7 +164,7 @@ projects[panels_extra_layouts][subdir] = "contrib"
 projects[panels_extra_styles][version] = "1"
 projects[panels_extra_styles][subdir] = "contrib"
 
-projects[panels_mini_ipe][version] = "1"
+projects[panels_mini_ipe][version] = "1.x-dev"
 projects[panels_mini_ipe][subdir] = "contrib"
 
 projects[panopoly_admin][version] = "1"
