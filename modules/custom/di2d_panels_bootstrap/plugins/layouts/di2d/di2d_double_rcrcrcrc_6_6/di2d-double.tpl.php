@@ -16,10 +16,10 @@ if (!empty($css_id)) {
 ?>>
 
   <?php
-  $total = 4;
+  $total = 4;s
   $width = 12;
-  $left = 9;
-  $right = 3;
+  $left = 6;
+  $right = 6;
   ?>
 
   <?php for ($num = 1; $num <= $total; $num++) : ?>
