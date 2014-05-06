@@ -9,7 +9,7 @@
     <header class="masthead">
 
       <?php if ($site_name): ?>
-        <div id="site-name-slogan" class="brand navbar-brand <?php
+        <div id="site-name-slogan" class="brand <?php
         if ($hide_site_name) {
           print ' element-invisible';
         }
@@ -30,23 +30,32 @@
 
       <?php endif; ?>
 
-
-      <div id="myCarousel" class="carousel_slide">
-        <div class="mini-header-inner">
-          <?php print render($page['header']); ?>
+      <?php if (isset($page['header']) && $page['header']): ?>
+        <div class="header-region1">
+          <div class="header-region1-inner">
+            <?php print render($page['header']); ?>
+          </div>
         </div>
-      </div>
+      <?php endif; ?>
 
-      <div class="header-region2">
-        <?php print render($page['header2']); ?>
-      </div>
+      <?php if (isset($page['header2']) && $page['header2']): ?>
+        <div class="header-region2">
+          <div class="header-region2-inner">
+            <?php print render($page['header2']); ?>
+          </div>
+        </div>
+      <?php endif; ?>
 
     </header>
 
     <!-- Fixed navbar -->
-    <div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
-      <?php print render($page['navigation']); ?>
-    </div><!--/.navbar -->
+    <?php if (isset($page['navigation']) && $page['navigation']): ?>
+      <div class="navbar-region">
+        <div class="navbar-region-inner">
+          <?php print render($page['navigation']); ?>
+        </div>
+      </div><!--/.navbar -->
+    <?php endif; ?>
 
     <!-- Begin page content -->
 
@@ -85,11 +94,13 @@
           <?php print render($page['content']); ?>
         </div> <!-- /.section, /#content -->
 
-        <footer id="footer">
-          <div class="footer-inner">
-            <?php print render($page['footer']); ?>
-          </div>
-        </footer>
+        <?php if (isset($page['footer']) && $page['footer']): ?>
+          <footer id="footer">
+            <div class="footer-inner">
+              <?php print render($page['footer']); ?>
+            </div>
+          </footer>
+        <?php endif; ?>
 
       </div></div> <!-- /#main, /#main-wrapper -->
 
