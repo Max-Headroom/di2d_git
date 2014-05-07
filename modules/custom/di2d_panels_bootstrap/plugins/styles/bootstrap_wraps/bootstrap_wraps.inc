@@ -6,7 +6,7 @@
  */
 $plugin = array(
     'title' => t('Bootstrap Wraps'),
-    'description' => t('Bootstrap wrapper classes (Stolen from Kalatheme)'),
+    'description' => t('Bootstrap wrapper classes (Stolen from Kalatheme and others)'),
     'render region' => 'bootstrap_wraps_render_region',
     'render pane' => 'bootstrap_wraps_render_pane',
     'settings form' => 'bootstrap_wraps_pane_settings_form',
@@ -24,6 +24,7 @@ function theme_bootstrap_wraps_render_region($vars) {
   $settings['attributes'] = '';
   $settings['attributes'] .= _bootstrap_wraps_get_styles($settings['devices']);
   $settings['attributes'] .= _bootstrap_wraps_get_styles($settings['pane_style']);
+  $settings['attributes'] .= _bootstrap_wraps_column_classes($vars);
 
   // Theme.
   if (!empty($settings['theme']) && $settings['theme']) {
@@ -75,7 +76,7 @@ function theme_bootstrap_wraps_render_pane($vars) {
 /**
  * Options for the Panels style plugin to help style panes.
  */
-function bootstrap_wraps_pane_settings_form($style_settings) {
+function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $type, $form_state) {
 
   $mobile_options = array(
       'hidden-xs' => 'Phone',
@@ -137,6 +138,126 @@ function bootstrap_wraps_pane_settings_form($style_settings) {
       '#suffix' => '</div>',
       '#type' => 'checkbox',
       '#default_value' => isset($style_settings['section_devider']) ? $style_settings['section_devider'] : '',
+  );
+
+  //Bootstrap columns
+  $options = range(0, 12);
+  $options[0] = t('-- None --');
+
+  $form['column_size_xs'] = array(
+      '#type' => 'select',
+      '#title' => t('Column size XS'),
+      '#options' => $options,
+      '#default_value' => isset($style_settings['column_size_xs']) ? $style_settings['column_size_xs'] : _bootstrap_wraps_get_default_column_size($display->layout, $pid),
+      '#description' => t('Column size for Extra small devices (col-xs-*)'),
+  );
+
+  $form['column_size_sm'] = array(
+      '#type' => 'select',
+      '#title' => t('Column size SM'),
+      '#options' => $options,
+      '#default_value' => isset($style_settings['column_size_sm']) ? $style_settings['column_size_sm'] : _bootstrap_wraps_get_default_column_size($display->layout, $pid),
+      '#description' => t('Column size for Small devices (col-sm-*)'),
+  );
+
+  $form['column_size_md'] = array(
+      '#type' => 'select',
+      '#title' => t('Сolumn size MD'),
+      '#options' => $options,
+      '#default_value' => isset($style_settings['column_size_md']) ? $style_settings['column_size_md'] : _bootstrap_wraps_get_default_column_size($display->layout, $pid),
+      '#description' => t('Column size for Medium devices (col-md-*)'),
+  );
+
+  $form['column_size_lg'] = array(
+      '#type' => 'select',
+      '#title' => t('Column size LG'),
+      '#options' => $options,
+      '#default_value' => isset($style_settings['column_size_lg']) ? $style_settings['column_size_lg'] : _bootstrap_wraps_get_default_column_size($display->layout, $pid),
+      '#description' => t('Column size for Large devices (col-lg-*)'),
+  );
+
+  $form['offset_size_xs'] = array(
+      '#type' => 'select',
+      '#title' => t('Offset size XS'),
+      '#options' => $options,
+      '#default_value' => isset($style_settings['offset_size_xs']) ? $style_settings['offset_size_xs'] : 0,
+  );
+
+  $form['offset_size_sm'] = array(
+      '#type' => 'select',
+      '#title' => t('Offset size SM'),
+      '#options' => $options,
+      '#default_value' => isset($style_settings['offset_size_sm']) ? $style_settings['offset_size_sm'] : 0,
+  );
+
+  $form['offset_size_md'] = array(
+      '#type' => 'select',
+      '#title' => t('Offset size MD'),
+      '#options' => $options,
+      '#default_value' => isset($style_settings['offset_size_md']) ? $style_settings['offset_size_md'] : 0,
+  );
+
+  $form['offset_size_lg'] = array(
+      '#type' => 'select',
+      '#title' => t('Offset size LG'),
+      '#options' => $options,
+      '#default_value' => isset($style_settings['offset_size_lg']) ? $style_settings['offset_size_lg'] : 0,
+  );
+
+  $form['push_size_xs'] = array(
+      '#type' => 'select',
+      '#title' => t('Push size XS'),
+      '#options' => $options,
+      '#default_value' => isset($style_settings['push_size_xs']) ? $style_settings['push_size_xs'] : 0,
+  );
+
+  $form['push_size_sm'] = array(
+      '#type' => 'select',
+      '#title' => t('Push size SM'),
+      '#options' => $options,
+      '#default_value' => isset($style_settings['push_size_sm']) ? $style_settings['push_size_sm'] : 0,
+  );
+
+  $form['push_size_md'] = array(
+      '#type' => 'select',
+      '#title' => t('Push size MD'),
+      '#options' => $options,
+      '#default_value' => isset($style_settings['push_size_md']) ? $style_settings['push_size_md'] : 0,
+  );
+
+  $form['push_size_lg'] = array(
+      '#type' => 'select',
+      '#title' => t('Push size LG'),
+      '#options' => $options,
+      '#default_value' => isset($style_settings['push_size_lg']) ? $style_settings['push_size_lg'] : 0,
+  );
+
+  $form['pull_size_xs'] = array(
+      '#type' => 'select',
+      '#title' => t('Pull size XS'),
+      '#options' => $options,
+      '#default_value' => isset($style_settings['pull_size_xs']) ? $style_settings['pull_size_xs'] : 0,
+  );
+
+  $form['pull_size_sm'] = array(
+      '#type' => 'select',
+      '#title' => t('Pull size SM'),
+      '#options' => $options,
+      '#default_value' => isset($style_settings['pull_size_sm']) ? $style_settings['pull_size_sm'] : 0,
+  );
+
+  $form['pull_size_md'] = array(
+      '#type' => 'select',
+      '#title' => t('Pull size MD'),
+      '#options' => $options,
+      '#default_value' => isset($style_settings['pull_size_md']) ? $style_settings['pull_size_md'] : 0,
+  );
+
+  $form['pull_size_lg'] = array(
+      '#type' => 'select',
+      '#title' => t('Pull size LG'),
+      '#options' => $options,
+      '#default_value' => isset($style_settings['pull_size_lg']) ? $style_settings['pull_size_lg'] : 0,
   );
 
   $pane_style_default_value = isset($style_settings['pane_style']) ? $style_settings['pane_style'] : '';
@@ -220,8 +341,8 @@ function _bootstrap_wraps_attach_affix($styles, $offset_top, $offset_bottom) {
 /**
  * Get pane/region styles depending on chosen classes.
  *
- * @return array
- *   Array with prefix and suffix keys.
+ * @return string
+ *   build class string.
  */
 function _bootstrap_wraps_get_styles($styles = array()) {
   if (isset($styles)) {
@@ -235,6 +356,56 @@ function _bootstrap_wraps_get_styles($styles = array()) {
       }
     }
     return $styles ? ' ' . implode(' ', $styles) : '';
+  }
+}
+
+/** Apply Bootstrap column classes
+ *
+ * @return string
+ * build class string
+ */
+function _bootstrap_wraps_column_classes($vars) {
+  $display = $vars['display'];
+  $panes = $vars['panes'];
+  $settings = $vars['settings'];
+
+  $column_sizes = array(
+      'xs', // Extra small devices
+      'sm', // Small devices
+      'md', // Medium devices
+      'lg', // Large devices
+  );
+
+  $layouts = array(
+      'bootstrap_twocol_stacked',
+      'bootstrap_threecol_stacked',
+  );
+
+  if (in_array($display->layout, $layouts) && $panes) {
+    $class = array('panel-panel', $vars['region_id']);
+
+    foreach ($column_sizes as $size) {
+      $column_size = 'column_size_' . $size;
+      $offset_size = 'offset_size_' . $size;
+      $push_size = 'push_size_' . $size;
+      $pull_size = 'pull_size_' . $size;
+      if (isset($settings[$column_size]) && !empty($settings[$column_size])) {
+        $class[] = 'col-' . $size . '-' . $settings[$column_size];
+      }
+      if (isset($settings[$offset_size]) && !empty($settings[$offset_size])) {
+        $class[] = 'col-' . $size . '-offset-' . $settings[$offset_size];
+      }
+      if (isset($settings[$push_size]) && !empty($settings[$push_size])) {
+        $class[] = 'col-' . $size . '-push-' . $settings[$push_size];
+      }
+      if (isset($settings[$pull_size]) && !empty($settings[$pull_size])) {
+        $class[] = 'col-' . $size . '-pull-' . $settings[$pull_size];
+      }
+    }
+
+    $class = ' ' . implode(' ', $class);
+
+    return $class;
   }
 }
 
@@ -262,6 +433,22 @@ function _bootstrap_wraps_class_wrapper($item = array()) {
   return $wrap;
 }
 
+function _bootstrap_wraps_get_default_column_size($layout, $pid) {
+  if (in_array($pid, array('top', 'bottom'))) {
+    return 12;
+  }
+
+  if ($layout == 'bootstrap_twocol_stacked') {
+    return 6;
+  }
+
+  if ($layout == 'bootstrap_threecol_stacked') {
+    return 4;
+  }
+
+  return 1;
+}
+
 /** Do final wrap of output with all settings
  *
  * @return string
@@ -271,6 +458,7 @@ function _bootstrap_wraps_final_wrap($content, $settings) {
   $affix = _bootstrap_wraps_attach_affix($settings['pane_style'], $settings['affix']['offset_top'], $settings['affix']['offset_bottom']);
   $wrapped_output = '';
 
+  //Section and devider
   if (isset($settings['pane_sections']) && $settings['pane_sections']) {
     $wrapped_output .= '<div id = "section' . $settings['pane_sections'] . '"';
 
@@ -281,17 +469,23 @@ function _bootstrap_wraps_final_wrap($content, $settings) {
     $wrapped_output .= '></div>' . PHP_EOL;
   }
 
+  //Div ID
   if (isset($settings['pane_id']) && $settings['pane_id']) {
     $wrapped_output .= '<div id = "' . $settings['pane_id'] . '">' . PHP_EOL;
   }
 
+  //Affix
   $wrapped_output .= $affix . PHP_EOL;
+
+  //Actual content with classes
   $wrapped_output .= $content;
 
+  //Close Affix
   if (isset($affix) && $affix) {
     $wrapped_output .= '</div>' . PHP_EOL;
   }
 
+  //Close Div ID
   if (isset($settings['pane_id']) && $settings['pane_id']) {
     $wrapped_output .= '</div>' . PHP_EOL;
   }
