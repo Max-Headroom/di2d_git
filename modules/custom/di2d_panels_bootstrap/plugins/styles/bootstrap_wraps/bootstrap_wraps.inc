@@ -35,8 +35,8 @@ function theme_bootstrap_wraps_render_region($vars) {
 
   // Wrap
   if (!empty($output)) {
-    $content_wrapper = _bootstrap_wraps_wrapper($settings);
-    $output = $content_wrapper['prefix'] . $content . $content_wrapper['suffix'];
+    $content_wrapper = _bootstrap_wraps_class_wrapper($settings);
+    $output = $content_wrapper['prefix'] . $output . $content_wrapper['suffix'];
     $wrapped_output = _bootstrap_wraps_final_wrap($output, $settings);
     return $wrapped_output;
   }
@@ -136,7 +136,6 @@ function bootstrap_wraps_pane_settings_form($style_settings) {
       //'#prefix' => '<div class="well inline">',
       '#suffix' => '</div>',
       '#type' => 'checkbox',
-      '#options' => $pane_sections_options,
       '#default_value' => isset($style_settings['section_devider']) ? $style_settings['section_devider'] : '',
   );
 
@@ -245,25 +244,17 @@ function _bootstrap_wraps_get_styles($styles = array()) {
  * @return array
  *   Array with prefix and suffix keys.
  */
-function _bootstrap_wraps_wrapper($item = array()) {
-  $wrap['prefix'] = NULL;
-  $wrap['suffix'] = NULL;
-  $wrap['attributes'] = NULL;
+function _bootstrap_wraps_class_wrapper($item = array()) {
+  $wrap = array();
+  $wrap_class = '';
 
   if (!empty($item['attributes'])) {
     $value = $item['attributes'];
-    $wrap['attributes'] .= " class=\"$value\"";
+    $wrap_class = " class=\"$value\"";
   }
 
-  $wrap['prefix'] = '<div ' . $wrap['attributes'] . '>';
+  $wrap['prefix'] = '<div ' . $wrap_class . '>';
   $wrap['suffix'] = '</div>';
-
-  if (!empty($item['prefix'])) {
-    $wrap['prefix'] = $item['prefix'];
-  }
-  if (!empty($item['suffix'])) {
-    $wrap['suffix'] = $item['suffix'];
-  }
 
   $wrap['prefix'] = PHP_EOL . $wrap['prefix'];
   $wrap['suffix'] = $wrap['suffix'] . PHP_EOL;
@@ -280,8 +271,8 @@ function _bootstrap_wraps_final_wrap($content, $settings) {
   $affix = _bootstrap_wraps_attach_affix($settings['pane_style'], $settings['affix']['offset_top'], $settings['affix']['offset_bottom']);
   $wrapped_output = '';
 
-  if (isset($settings['pane_section']) && $settings['pane_section']) {
-    $wrapped_output .= '<div id = "' . $settings['pane_section'] . '"';
+  if (isset($settings['pane_sections']) && $settings['pane_sections']) {
+    $wrapped_output .= '<div id = "section' . $settings['pane_sections'] . '"';
 
     if (isset($settings['section_devider']) && $settings['section_devider']) {
       $wrapped_output .= ' class = "devider" ';
