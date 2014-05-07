@@ -100,6 +100,7 @@ projects[honeypot][subdir] = "contrib"
 
 projects[panels][version] = "3"
 projects[panels][subdir] = "contrib"
+projects[panels][patches][] = "https://drupal.org/files/issues/undefined_property_notices_fix-2098515-2.patch"
 
 projects[image_resize_filter][version] = "1"
 projects[image_resize_filter][subdir] = "contrib"
@@ -233,8 +234,9 @@ projects[views_autocomplete_filters][subdir] = "contrib"
 projects[views_bootstrap][version] = "3"
 projects[views_bootstrap][subdir] = "contrib"
 
-projects[wysiwyg][version] = "2"
+projects[wysiwyg][version] = "2.x-dev"
 projects[wysiwyg][patches][] = "http://drupal.org/files/wysiwyg-1802394-4.patch"
+projects[wysiwyg][patches][] = "
 projects[wysiwyg][subdir] = "contrib"
 
 projects[wysiwyg_filter][version] = "1"

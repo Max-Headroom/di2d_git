@@ -2,10 +2,10 @@
 
 // Plugin definition
 $plugin = array(
-    'title' => t('DI2D Double R C R 6 6'),
+    'title' => t('DI2D Double R C R 6 6 W'),
     'icon' => 'di2d-double.png',
     'category' => t('DI2D'),
-    'theme' => 'di2d_double_rcr_6_6',
+    'theme' => 'di2d_double_rcr_6_6_w',
     'regions' => array(
         'section1-row' => t('Section One Row'),
         'section1-column1' => t('Section One First Column'),

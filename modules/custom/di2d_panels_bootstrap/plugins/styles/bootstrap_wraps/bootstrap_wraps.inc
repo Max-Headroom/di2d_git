@@ -15,7 +15,7 @@ $plugin = array(
 );
 
 /**
- * Theme fuction for the region style.
+ * Theme function for the region style.
  */
 function theme_bootstrap_wraps_render_region($vars) {
   $content = $vars['panes'];
@@ -56,6 +56,8 @@ function theme_bootstrap_wraps_render_pane($vars) {
   $content = &$vars['content'];
   $settings = $vars['settings'];
 
+  $affix = _bootstrap_wraps_attach_affix($settings['pane_style'], $settings['affix']['offset_top'], $settings['affix']['offset_bottom']);
+
   // This is needed to prevent throwing an error in php 5.5+
   if (!isset($content->css_class)) {
     $content->css_class = '';
@@ -66,7 +68,16 @@ function theme_bootstrap_wraps_render_pane($vars) {
 
   $output = theme('panels_pane', $vars);
 
-  return $output;
+  $content_wrapper = _bootstrap_wraps_wrapper($settings);
+  $wrapped_output = $affix;
+
+  $wrapped_output .= $output;
+
+  if (isset($affix) && $affix) {
+    $wrapped_output .= '</div>';
+  }
+
+  return $wrapped_output;
 }
 
 /**
@@ -91,6 +102,8 @@ function bootstrap_wraps_pane_settings_form($style_settings) {
 
   $pane_style_default_value = isset($style_settings['pane_style']) ? $style_settings['pane_style'] : '';
   $pane_options = array(
+      'container' => 'Container',
+      'no-container' => 'Remove Container',
       'pull-left' => 'Float Left',
       'pull-right' => 'Float Right',
       'clearfix' => 'Clearfix',

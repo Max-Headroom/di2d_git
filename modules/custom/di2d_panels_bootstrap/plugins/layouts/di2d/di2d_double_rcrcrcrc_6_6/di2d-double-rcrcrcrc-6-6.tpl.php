@@ -16,7 +16,7 @@ if (!empty($css_id)) {
 ?>>
 
   <?php
-  $total = 4;s
+  $total = 4;
   $width = 12;
   $left = 6;
   $right = 6;
