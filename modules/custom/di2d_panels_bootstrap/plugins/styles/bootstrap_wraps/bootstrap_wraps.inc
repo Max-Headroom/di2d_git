@@ -21,8 +21,6 @@ function theme_bootstrap_wraps_render_region($vars) {
   $content = $vars['panes'];
   $settings = $vars['settings'];
 
-  $affix = _bootstrap_wraps_attach_affix($settings['pane_style'], $settings['affix']['offset_top'], $settings['affix']['offset_bottom']);
-
   $settings['attributes'] = '';
   $settings['attributes'] .= _bootstrap_wraps_get_styles($settings['devices']);
   $settings['attributes'] .= _bootstrap_wraps_get_styles($settings['pane_style']);
@@ -38,15 +36,12 @@ function theme_bootstrap_wraps_render_region($vars) {
   // Wrap
   if (!empty($output)) {
     $content_wrapper = _bootstrap_wraps_wrapper($settings);
-    $wrapped_output = $affix;
-    $wrapped_output .= $content_wrapper['prefix'] . $output . $content_wrapper['suffix'];
-
-    if (isset($affix) && $affix) {
-      $wrapped_output .= '</div>';
-    }
+    $output = $content_wrapper['prefix'] . $content . $content_wrapper['suffix'];
+    $wrapped_output = _bootstrap_wraps_final_wrap($output, $settings);
+    return $wrapped_output;
   }
 
-  return $wrapped_output;
+  return $output;
 }
 
 /**
@@ -68,16 +63,13 @@ function theme_bootstrap_wraps_render_pane($vars) {
 
   $output = theme('panels_pane', $vars);
 
-  $content_wrapper = _bootstrap_wraps_wrapper($settings);
-  $wrapped_output = $affix;
-
-  $wrapped_output .= $output;
-
-  if (isset($affix) && $affix) {
-    $wrapped_output .= '</div>';
+  // Wrap
+  if (!empty($output)) {
+    $wrapped_output = _bootstrap_wraps_final_wrap($output, $settings);
+    return $wrapped_output;
   }
 
-  return $wrapped_output;
+  return $output;
 }
 
 /**
@@ -92,12 +84,60 @@ function bootstrap_wraps_pane_settings_form($style_settings) {
       'hidden-lg' => 'Large Desktop',
   );
   $form['devices'] = array(
-      '#prefix' => '<div class="well">',
+      '#prefix' => '<div class="well inline">',
       '#suffix' => '</div>',
       '#type' => 'checkboxes',
       '#options' => $mobile_options,
       '#title' => t('Hide this pane on the following devices.'),
       '#default_value' => $style_settings['devices'],
+  );
+
+  $pane_id_default_value = isset($style_settings['pane_id']) ? $style_settings['pane_id'] : '';
+  $pane_id_options = array(
+      'header' => 'Header',
+      'footer' => 'Footer',
+  );
+
+  $form['pane_id'] = array(
+      '#title' => t('ID wraps'),
+      '#prefix' => '<div class="well inline">',
+      '#suffix' => '</div>',
+      '#type' => 'radios',
+      '#options' => $pane_id_options,
+      '#default_value' => $pane_id_default_value,
+  );
+
+
+  $pane_sections_default_value = isset($style_settings['pane_sections']) ? $style_settings['pane_sections'] : '';
+  $pane_sections_options = array(
+      '1' => 'Section 1',
+      '2' => 'Section 2',
+      '3' => 'Section 3',
+      '4' => 'Section 4',
+      '5' => 'Section 5',
+      '6' => 'Section 6',
+      '7' => 'Section 7',
+      '8' => 'Section 8',
+      '9' => 'Section 9',
+      '10' => 'Section 10',
+  );
+
+  $form['pane_sections'] = array(
+      '#title' => t('Sections(Anchors)'),
+      '#prefix' => '<div class="well inline">',
+      //'#suffix' => '</div>',
+      '#type' => 'radios',
+      '#options' => $pane_sections_options,
+      '#default_value' => $pane_sections_default_value,
+  );
+
+  $form['section_devider'] = array(
+      '#title' => t('Add devider class to section'),
+      //'#prefix' => '<div class="well inline">',
+      '#suffix' => '</div>',
+      '#type' => 'checkbox',
+      '#options' => $pane_sections_options,
+      '#default_value' => isset($style_settings['section_devider']) ? $style_settings['section_devider'] : '',
   );
 
   $pane_style_default_value = isset($style_settings['pane_style']) ? $style_settings['pane_style'] : '';
@@ -116,7 +156,7 @@ function bootstrap_wraps_pane_settings_form($style_settings) {
 
   $form['pane_style'] = array(
       '#title' => t('Styles'),
-      '#prefix' => '<div class="well">',
+      '#prefix' => '<div class="well inline">',
       '#suffix' => '</div>',
       '#type' => 'checkboxes',
       '#options' => $pane_options,
@@ -155,12 +195,12 @@ function bootstrap_wraps_pane_settings_form($style_settings) {
 /**
  * Add affix JS.
  *
- * @return bool
- *   If there is an affix.
+ * @return string
+ *   Affix wrapper start.
  */
 function _bootstrap_wraps_attach_affix($styles, $offset_top, $offset_bottom) {
 
-  if (isset($styles['affix'])) {
+  if (isset($styles['affix']) && $styles['affix']) {
     //<div data-spy="affix" data-offset-top="60" data-offset-bottom="200">
     $affix_styles = '<div';
     $affix_styles .= ' data-spy="affix"';
@@ -229,4 +269,41 @@ function _bootstrap_wraps_wrapper($item = array()) {
   $wrap['suffix'] = $wrap['suffix'] . PHP_EOL;
 
   return $wrap;
+}
+
+/** Do final wrap of output with all settings
+ *
+ * @return string
+ *
+ */
+function _bootstrap_wraps_final_wrap($content, $settings) {
+  $affix = _bootstrap_wraps_attach_affix($settings['pane_style'], $settings['affix']['offset_top'], $settings['affix']['offset_bottom']);
+  $wrapped_output = '';
+
+  if (isset($settings['pane_section']) && $settings['pane_section']) {
+    $wrapped_output .= '<div id = "' . $settings['pane_section'] . '"';
+
+    if (isset($settings['section_devider']) && $settings['section_devider']) {
+      $wrapped_output .= ' class = "devider" ';
+    }
+
+    $wrapped_output .= '></div>' . PHP_EOL;
+  }
+
+  if (isset($settings['pane_id']) && $settings['pane_id']) {
+    $wrapped_output .= '<div id = "' . $settings['pane_id'] . '">' . PHP_EOL;
+  }
+
+  $wrapped_output .= $affix . PHP_EOL;
+  $wrapped_output .= $content;
+
+  if (isset($affix) && $affix) {
+    $wrapped_output .= '</div>' . PHP_EOL;
+  }
+
+  if (isset($settings['pane_id']) && $settings['pane_id']) {
+    $wrapped_output .= '</div>' . PHP_EOL;
+  }
+
+  return $wrapped_output;
 }

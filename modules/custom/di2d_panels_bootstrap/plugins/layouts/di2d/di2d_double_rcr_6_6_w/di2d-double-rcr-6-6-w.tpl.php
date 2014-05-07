@@ -24,7 +24,6 @@ if (!empty($css_id)) {
 
   <?php for ($num = 1; $num <= $total; $num++) : ?>
     <?php if (isset($content['section' . $num . '-row']) || isset($content['section' . $num . '-column1']) || isset($content['section' . $num . '-column2'])): ?>
-      <div class="divider" id="section<?php print $num; ?>"></div>
 
       <?php if (isset($content['section' . $num . '-row'])): ?>
         <div class="row section<?php print $num; ?>-row">
