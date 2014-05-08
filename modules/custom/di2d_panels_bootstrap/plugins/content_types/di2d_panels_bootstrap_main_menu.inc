@@ -102,7 +102,7 @@ function bootstrap_main_menu_render($subtype, $conf, $panel_args, $context = NUL
 
     case 'section':
       foreach ($conf['section_menu_array'] as $key => $value) {
-        $items['/#section' . $key] = $value;
+        $items['#section' . $key] = $value;
       }
       break;
   }

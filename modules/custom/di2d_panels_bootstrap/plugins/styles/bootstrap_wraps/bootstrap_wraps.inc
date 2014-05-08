@@ -78,6 +78,57 @@ function theme_bootstrap_wraps_render_pane($vars) {
  */
 function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $type, $form_state) {
 
+  $pane_style_default_value = isset($style_settings['pane_style']) ? $style_settings['pane_style'] : '';
+  $pane_options = array(
+      'container' => 'Container',
+      'start-container' => 'Start Container (For groups)',
+      'end-container' => 'End Container (For groups)',
+      'pull-left' => 'Float Left',
+      'pull-right' => 'Float Right',
+      'clearfix' => 'Clearfix',
+      'jumbotron' => 'Jumbotron',
+      'well' => 'Well',
+      'pane' => 'Pane',
+      'alert' => 'Alert',
+      'affix' => 'Affix',
+  );
+
+  $form['pane_style'] = array(
+      '#title' => t('Styles'),
+      '#prefix' => '<div class="well container-inline">',
+      '#suffix' => '</div>',
+      '#type' => 'checkboxes',
+      '#options' => $pane_options,
+      '#default_value' => $pane_style_default_value,
+  );
+
+  $form['affix'] = array(
+      '#collapsed' => '0',
+      '#type' => 'fieldset',
+      '#collapsible' => '0',
+      '#title' => t('Affix settings'),
+      '#states' => array(
+          'visible' => array(
+              ':input[name="settings[pane_style][affix]"]' => array('checked' => TRUE),
+          ),
+      ),
+  );
+
+  $form['affix']['offset_top'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Offset Top (px)'),
+      '#default_value' => (!empty($style_settings['affix']['offset_top'])) ? $style_settings['affix']['offset_top'] : '',
+      '#prefix' => '<div class="well container-inline">',
+      '#suffix' => '</div>',
+  );
+  $form['affix']['offset_bottom'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Offset Bottom (px)'),
+      '#default_value' => (!empty($style_settings['affix']['offset_bottom'])) ? $style_settings['affix']['offset_bottom'] : '',
+      '#prefix' => '<div class="well container-inline">',
+      '#suffix' => '</div>',
+  );
+
   $mobile_options = array(
       'hidden-xs' => 'Phone',
       'hidden-sm' => 'Tablet',
@@ -85,7 +136,7 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
       'hidden-lg' => 'Large Desktop',
   );
   $form['devices'] = array(
-      '#prefix' => '<div class="well inline">',
+      '#prefix' => '<div class="well container-inline">',
       '#suffix' => '</div>',
       '#type' => 'checkboxes',
       '#options' => $mobile_options,
@@ -101,7 +152,7 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
 
   $form['pane_id'] = array(
       '#title' => t('ID wraps'),
-      '#prefix' => '<div class="well inline">',
+      '#prefix' => '<div class="well container-inline">',
       '#suffix' => '</div>',
       '#type' => 'radios',
       '#options' => $pane_id_options,
@@ -125,26 +176,35 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
 
   $form['pane_sections'] = array(
       '#title' => t('Sections(Anchors)'),
-      '#prefix' => '<div class="well inline">',
+      '#prefix' => '<div class="well container-inline">',
       //'#suffix' => '</div>',
       '#type' => 'radios',
       '#options' => $pane_sections_options,
       '#default_value' => $pane_sections_default_value,
   );
 
-  $form['section_devider'] = array(
-      '#title' => t('Add devider class to section'),
-      //'#prefix' => '<div class="well inline">',
+  $form['section_divider'] = array(
+      '#title' => t('Add divider class to section'),
+      //'#prefix' => '<div class="well container-inline">',
       '#suffix' => '</div>',
       '#type' => 'checkbox',
-      '#default_value' => isset($style_settings['section_devider']) ? $style_settings['section_devider'] : '',
+      '#default_value' => isset($style_settings['section_divider']) ? $style_settings['section_divider'] : '',
   );
 
   //Bootstrap columns
   $options = range(0, 12);
   $options[0] = t('-- None --');
 
-  $form['column_size_xs'] = array(
+  $form['column'] = array(
+      '#collapsed' => '1',
+      '#type' => 'fieldset',
+      '#collapsible' => '1',
+      '#title' => t('Column'),
+      '#prefix' => '<div class="well">',
+      '#suffix' => '</div>',
+  );
+
+  $form['column']['column_size_xs'] = array(
       '#type' => 'select',
       '#title' => t('Column size XS'),
       '#options' => $options,
@@ -152,7 +212,7 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
       '#description' => t('Column size for Extra small devices (col-xs-*)'),
   );
 
-  $form['column_size_sm'] = array(
+  $form['column']['column_size_sm'] = array(
       '#type' => 'select',
       '#title' => t('Column size SM'),
       '#options' => $options,
@@ -160,7 +220,7 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
       '#description' => t('Column size for Small devices (col-sm-*)'),
   );
 
-  $form['column_size_md'] = array(
+  $form['column']['column_size_md'] = array(
       '#type' => 'select',
       '#title' => t('Сolumn size MD'),
       '#options' => $options,
@@ -168,7 +228,7 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
       '#description' => t('Column size for Medium devices (col-md-*)'),
   );
 
-  $form['column_size_lg'] = array(
+  $form['column']['column_size_lg'] = array(
       '#type' => 'select',
       '#title' => t('Column size LG'),
       '#options' => $options,
@@ -176,139 +236,116 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
       '#description' => t('Column size for Large devices (col-lg-*)'),
   );
 
-  $form['offset_size_xs'] = array(
+  $form['offset'] = array(
+      '#collapsed' => '1',
+      '#type' => 'fieldset',
+      '#collapsible' => '1',
+      '#title' => t('Offset'),
+      '#prefix' => '<div class="well">',
+      '#suffix' => '</div>',
+  );
+  $form['offset']['offset_size_xs'] = array(
       '#type' => 'select',
       '#title' => t('Offset size XS'),
       '#options' => $options,
       '#default_value' => isset($style_settings['offset_size_xs']) ? $style_settings['offset_size_xs'] : 0,
   );
 
-  $form['offset_size_sm'] = array(
+  $form['offset']['offset_size_sm'] = array(
       '#type' => 'select',
       '#title' => t('Offset size SM'),
       '#options' => $options,
       '#default_value' => isset($style_settings['offset_size_sm']) ? $style_settings['offset_size_sm'] : 0,
   );
 
-  $form['offset_size_md'] = array(
+  $form['offset']['offset_size_md'] = array(
       '#type' => 'select',
       '#title' => t('Offset size MD'),
       '#options' => $options,
       '#default_value' => isset($style_settings['offset_size_md']) ? $style_settings['offset_size_md'] : 0,
   );
 
-  $form['offset_size_lg'] = array(
+  $form['offset']['offset_size_lg'] = array(
       '#type' => 'select',
       '#title' => t('Offset size LG'),
       '#options' => $options,
       '#default_value' => isset($style_settings['offset_size_lg']) ? $style_settings['offset_size_lg'] : 0,
   );
 
-  $form['push_size_xs'] = array(
+  $form['push'] = array(
+      '#collapsed' => '1',
+      '#type' => 'fieldset',
+      '#collapsible' => '1',
+      '#title' => t('Push'),
+      '#prefix' => '<div class="well">',
+      '#suffix' => '</div>',
+  );
+
+  $form['push']['push_size_xs'] = array(
       '#type' => 'select',
       '#title' => t('Push size XS'),
       '#options' => $options,
       '#default_value' => isset($style_settings['push_size_xs']) ? $style_settings['push_size_xs'] : 0,
   );
 
-  $form['push_size_sm'] = array(
+  $form['push']['push_size_sm'] = array(
       '#type' => 'select',
       '#title' => t('Push size SM'),
       '#options' => $options,
       '#default_value' => isset($style_settings['push_size_sm']) ? $style_settings['push_size_sm'] : 0,
   );
 
-  $form['push_size_md'] = array(
+  $form['push']['push_size_md'] = array(
       '#type' => 'select',
       '#title' => t('Push size MD'),
       '#options' => $options,
       '#default_value' => isset($style_settings['push_size_md']) ? $style_settings['push_size_md'] : 0,
   );
 
-  $form['push_size_lg'] = array(
+  $form['push']['push_size_lg'] = array(
       '#type' => 'select',
       '#title' => t('Push size LG'),
       '#options' => $options,
       '#default_value' => isset($style_settings['push_size_lg']) ? $style_settings['push_size_lg'] : 0,
   );
 
-  $form['pull_size_xs'] = array(
+  $form['pull'] = array(
+      '#collapsed' => '1',
+      '#type' => 'fieldset',
+      '#collapsible' => '1',
+      '#title' => t('Pull'),
+      '#prefix' => '<div class="well">',
+      '#suffix' => '</div>',
+  );
+
+  $form['pull']['pull_size_xs'] = array(
       '#type' => 'select',
       '#title' => t('Pull size XS'),
       '#options' => $options,
       '#default_value' => isset($style_settings['pull_size_xs']) ? $style_settings['pull_size_xs'] : 0,
   );
 
-  $form['pull_size_sm'] = array(
+  $form['pull']['pull_size_sm'] = array(
       '#type' => 'select',
       '#title' => t('Pull size SM'),
       '#options' => $options,
       '#default_value' => isset($style_settings['pull_size_sm']) ? $style_settings['pull_size_sm'] : 0,
   );
 
-  $form['pull_size_md'] = array(
+  $form['pull']['pull_size_md'] = array(
       '#type' => 'select',
       '#title' => t('Pull size MD'),
       '#options' => $options,
       '#default_value' => isset($style_settings['pull_size_md']) ? $style_settings['pull_size_md'] : 0,
   );
 
-  $form['pull_size_lg'] = array(
+  $form['pull']['pull_size_lg'] = array(
       '#type' => 'select',
       '#title' => t('Pull size LG'),
       '#options' => $options,
       '#default_value' => isset($style_settings['pull_size_lg']) ? $style_settings['pull_size_lg'] : 0,
   );
 
-  $pane_style_default_value = isset($style_settings['pane_style']) ? $style_settings['pane_style'] : '';
-  $pane_options = array(
-      'container' => 'Container',
-      'no-container' => 'Remove Container',
-      'pull-left' => 'Float Left',
-      'pull-right' => 'Float Right',
-      'clearfix' => 'Clearfix',
-      'jumbotron' => 'Jumbotron',
-      'well' => 'Well',
-      'pane' => 'Pane',
-      'alert' => 'Alert',
-      'affix' => 'Affix',
-  );
-
-  $form['pane_style'] = array(
-      '#title' => t('Styles'),
-      '#prefix' => '<div class="well inline">',
-      '#suffix' => '</div>',
-      '#type' => 'checkboxes',
-      '#options' => $pane_options,
-      '#default_value' => $pane_style_default_value,
-  );
-
-  $form['affix'] = array(
-      '#collapsed' => '0',
-      '#type' => 'fieldset',
-      '#collapsible' => '0',
-      '#title' => t('Affix settings'),
-      '#states' => array(
-          'visible' => array(
-              ':input[name="settings[pane_style][affix]"]' => array('checked' => TRUE),
-          ),
-      ),
-  );
-
-  $form['affix']['offset_top'] = array(
-      '#type' => 'textfield',
-      '#title' => t('Offset Top (px)'),
-      '#default_value' => (!empty($style_settings['affix']['offset_top'])) ? $style_settings['affix']['offset_top'] : '',
-      '#prefix' => '<div class="well">',
-      '#suffix' => '</div>',
-  );
-  $form['affix']['offset_bottom'] = array(
-      '#type' => 'textfield',
-      '#title' => t('Offset Bottom (px)'),
-      '#default_value' => (!empty($style_settings['affix']['offset_bottom'])) ? $style_settings['affix']['offset_bottom'] : '',
-      '#prefix' => '<div class="well">',
-      '#suffix' => '</div>',
-  );
   return $form;
 }
 
@@ -352,6 +389,18 @@ function _bootstrap_wraps_get_styles($styles = array()) {
       }
 
       if ($class === 'affix') {
+        unset($styles[$key]);
+      }
+
+      if ($class === 'container') {
+        unset($styles[$key]);
+      }
+
+      if ($class === 'start-container') {
+        unset($styles[$key]);
+      }
+
+      if ($class === 'end-container') {
         unset($styles[$key]);
       }
     }
@@ -455,23 +504,29 @@ function _bootstrap_wraps_get_default_column_size($layout, $pid) {
  *
  */
 function _bootstrap_wraps_final_wrap($content, $settings) {
+  //dpm($settings);
   $affix = _bootstrap_wraps_attach_affix($settings['pane_style'], $settings['affix']['offset_top'], $settings['affix']['offset_bottom']);
   $wrapped_output = '';
 
-  //Section and devider
+  //Section and divider
   if (isset($settings['pane_sections']) && $settings['pane_sections']) {
     $wrapped_output .= '<div id = "section' . $settings['pane_sections'] . '"';
 
-    if (isset($settings['section_devider']) && $settings['section_devider']) {
-      $wrapped_output .= ' class = "devider" ';
+    if (isset($settings['section_divider']) && $settings['section_divider']) {
+      $wrapped_output .= ' class = "divider" ';
     }
 
-    $wrapped_output .= '></div>' . PHP_EOL;
+    $wrapped_output .= '></div>' . PHP_EOL; //Section is not a wrapper
   }
 
   //Div ID
   if (isset($settings['pane_id']) && $settings['pane_id']) {
     $wrapped_output .= '<div id = "' . $settings['pane_id'] . '">' . PHP_EOL;
+  }
+
+  //Container
+  if ((isset($settings['pane_style']['container']) && $settings['pane_style']['container']) || (isset($settings['pane_style']['start-container']) && $settings['pane_style']['start-container'])) {
+    $wrapped_output .= '<div class = "container">' . PHP_EOL;
   }
 
   //Affix
@@ -482,6 +537,11 @@ function _bootstrap_wraps_final_wrap($content, $settings) {
 
   //Close Affix
   if (isset($affix) && $affix) {
+    $wrapped_output .= '</div>' . PHP_EOL;
+  }
+
+  //Close Container
+  if ((isset($settings['pane_style']['container']) && $settings['pane_style']['container']) || (isset($settings['pane_style']['end-container']) && $settings['pane_style']['end-container'])) {
     $wrapped_output .= '</div>' . PHP_EOL;
   }
 
