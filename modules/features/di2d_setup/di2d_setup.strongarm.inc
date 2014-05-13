@@ -280,14 +280,14 @@ function di2d_setup_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'live_css_hideadmin';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['live_css_hideadmin'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'live_css_hidemodules';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['live_css_hidemodules'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -336,7 +336,7 @@ function di2d_setup_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'live_css_theme';
-  $strongarm->value = 'chrome';
+  $strongarm->value = 'solarized_dark';
   $export['live_css_theme'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -455,7 +455,7 @@ function di2d_setup_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'panels_page_allowed_layouts';
-  $strongarm->value = 'O:22:"panels_allowed_layouts":4:{s:9:"allow_new";b:1;s:11:"module_name";s:11:"panels_page";s:23:"allowed_layout_settings";a:45:{s:8:"flexible";b:0;s:14:"twocol_stacked";b:0;s:13:"twocol_bricks";b:0;s:6:"twocol";b:0;s:25:"threecol_33_34_33_stacked";b:0;s:17:"threecol_33_34_33";b:0;s:25:"threecol_25_50_25_stacked";b:0;s:17:"threecol_25_50_25";b:0;s:6:"onecol";b:0;s:6:"whelan";b:1;s:12:"webb_flipped";b:1;s:5:"sutro";b:1;s:13:"selby_flipped";b:1;s:5:"selby";b:1;s:4:"pond";b:1;s:15:"moscone_flipped";b:1;s:7:"moscone";b:1;s:8:"mccoppin";b:1;s:15:"hewston_flipped";b:1;s:7:"hewston";b:1;s:6:"harris";b:1;s:5:"geary";b:1;s:12:"burr_flipped";b:1;s:4:"burr";b:1;s:5:"brown";b:1;s:15:"brenham_flipped";b:1;s:7:"brenham";b:1;s:16:"bartlett_flipped";b:1;s:8:"bartlett";b:1;s:17:"sanderson_flipped";b:1;s:9:"sanderson";b:1;s:6:"boxton";b:1;s:22:"bryant_flipped_flipped";b:1;s:6:"bryant";b:1;s:6:"phelan";b:1;s:14:"taylor_flipped";b:1;s:6:"taylor";b:1;s:12:"sutro_double";b:1;s:5:"rolph";b:1;s:4:"webb";b:1;s:10:"responsive";b:1;s:18:"responsive:default";b:0;s:19:"di2d_double_rcr_6_6";b:1;s:19:"di2d_double_rcr_9_3";b:1;s:24:"di2d_double_rcrcrcrc_6_6";b:1;}s:10:"form_state";N;}';
+  $strongarm->value = 'O:22:"panels_allowed_layouts":4:{s:9:"allow_new";b:1;s:11:"module_name";s:11:"panels_page";s:23:"allowed_layout_settings";a:48:{s:8:"flexible";b:0;s:14:"twocol_stacked";b:0;s:13:"twocol_bricks";b:0;s:6:"twocol";b:0;s:25:"threecol_33_34_33_stacked";b:0;s:17:"threecol_33_34_33";b:0;s:25:"threecol_25_50_25_stacked";b:0;s:17:"threecol_25_50_25";b:0;s:6:"onecol";b:0;s:6:"whelan";b:1;s:12:"webb_flipped";b:1;s:5:"sutro";b:1;s:13:"selby_flipped";b:1;s:5:"selby";b:1;s:4:"pond";b:1;s:15:"moscone_flipped";b:1;s:7:"moscone";b:1;s:8:"mccoppin";b:1;s:15:"hewston_flipped";b:1;s:7:"hewston";b:1;s:6:"harris";b:1;s:5:"geary";b:1;s:12:"burr_flipped";b:1;s:4:"burr";b:1;s:5:"brown";b:1;s:15:"brenham_flipped";b:1;s:7:"brenham";b:1;s:16:"bartlett_flipped";b:1;s:8:"bartlett";b:1;s:17:"sanderson_flipped";b:1;s:9:"sanderson";b:1;s:6:"boxton";b:1;s:22:"bryant_flipped_flipped";b:1;s:6:"bryant";b:1;s:6:"phelan";b:1;s:14:"taylor_flipped";b:1;s:6:"taylor";b:1;s:12:"sutro_double";b:1;s:5:"rolph";b:1;s:4:"webb";b:1;s:10:"responsive";b:1;s:18:"responsive:default";b:0;s:19:"di2d_double_rcr_6_6";b:1;s:19:"di2d_double_rcr_9_3";b:1;s:24:"di2d_double_rcrcrcrc_6_6";b:1;s:26:"di2d_double_rcrcrcrc_6_6_w";b:1;s:21:"di2d_double_rcr_9_3_w";b:1;s:21:"di2d_double_rcr_6_6_w";b:1;}s:10:"form_state";N;}';
   $export['panels_page_allowed_layouts'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -511,7 +511,7 @@ function di2d_setup_strongarm() {
     'page_slogan-page_slogan' => 0,
     'page_tabs-page_tabs' => 0,
     'page_title-page_title' => 0,
-    'node-node' => 0,
+    'node-node' => 'node-node',
     'content-content' => 0,
     'menus-menus' => 0,
     'pages-pages' => 0,
@@ -709,7 +709,7 @@ function di2d_setup_strongarm() {
     'entity_field_extra-file:file' => 'entity_field_extra-file:file',
     'entity_field_extra-taxonomy_term:description' => 0,
     'entity_field_extra-user:summary' => 'entity_field_extra-user:summary',
-    'custom-custom' => 0,
+    'custom-custom' => 'custom-custom',
     'block-apps-manage_apps__panopoly' => 0,
     'block-apps-manage_apps__panopoly_apps' => 0,
     'block-facetapi-1Cpx6naJU4Y3YvKVc0vcLK7Yo0ahaN0l' => 0,
@@ -844,7 +844,7 @@ function di2d_setup_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'theme_default';
-  $strongarm->value = 'di2d_base';
+  $strongarm->value = 'rfa';
   $export['theme_default'] = $strongarm;
 
   $strongarm = new stdClass();

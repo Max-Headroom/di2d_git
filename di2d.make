@@ -62,6 +62,9 @@ projects[defaultconfig][subdir] = "contrib"
 projects[devel][version] = "1"
 projects[devel][subdir] = "contrib"
 
+projects[drupal_reset][version] = "1"
+projects[drupal_reset][subdir] = "contrib"
+
 projects[entity][version] = "1"
 projects[entity][subdir] = "contrib"
 
