@@ -95,7 +95,7 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
 
   $form['pane_style'] = array(
       '#title' => t('Styles'),
-      '#prefix' => '<div class="well container-inline">',
+      '#prefix' => '<div class="well form-container">',
       '#suffix' => '</div>',
       '#type' => 'checkboxes',
       '#options' => $pane_options,
@@ -118,14 +118,14 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
       '#type' => 'textfield',
       '#title' => t('Offset Top (px)'),
       '#default_value' => (!empty($style_settings['affix']['offset_top'])) ? $style_settings['affix']['offset_top'] : '',
-      '#prefix' => '<div class="well container-inline">',
+      '#prefix' => '<div class="well form-container">',
       '#suffix' => '</div>',
   );
   $form['affix']['offset_bottom'] = array(
       '#type' => 'textfield',
       '#title' => t('Offset Bottom (px)'),
       '#default_value' => (!empty($style_settings['affix']['offset_bottom'])) ? $style_settings['affix']['offset_bottom'] : '',
-      '#prefix' => '<div class="well container-inline">',
+      '#prefix' => '<div class="well form-container">',
       '#suffix' => '</div>',
   );
 
@@ -136,7 +136,7 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
       'hidden-lg' => 'Large Desktop',
   );
   $form['devices'] = array(
-      '#prefix' => '<div class="well container-inline">',
+      '#prefix' => '<div class="well form-container">',
       '#suffix' => '</div>',
       '#type' => 'checkboxes',
       '#options' => $mobile_options,
@@ -152,7 +152,7 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
 
   $form['pane_id'] = array(
       '#title' => t('ID wraps'),
-      '#prefix' => '<div class="well container-inline">',
+      '#prefix' => '<div class="well form-container">',
       '#suffix' => '</div>',
       '#type' => 'radios',
       '#options' => $pane_id_options,
@@ -176,7 +176,7 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
 
   $form['pane_sections'] = array(
       '#title' => t('Sections(Anchors)'),
-      '#prefix' => '<div class="well container-inline">',
+      '#prefix' => '<div class="well form-container">',
       //'#suffix' => '</div>',
       '#type' => 'radios',
       '#options' => $pane_sections_options,
@@ -185,7 +185,7 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
 
   $form['section_divider'] = array(
       '#title' => t('Add divider class to section'),
-      //'#prefix' => '<div class="well container-inline">',
+      //'#prefix' => '<div class="well form-container">',
       '#suffix' => '</div>',
       '#type' => 'checkbox',
       '#default_value' => isset($style_settings['section_divider']) ? $style_settings['section_divider'] : '',
