@@ -34,8 +34,8 @@ projects[backup_migrate][subdir] = "contrib"
 projects[better_watchdog_ui][version] = "2"
 projects[better_watchdog_ui][subdir] = "contrib"
 
-projects[bootstrap_library][version] = "1"
-projects[bootstrap_library][subdir] = "contrib"
+;projects[bootstrap_library][version] = "1"
+;projects[bootstrap_library][subdir] = "contrib"
 
 projects[breakpoints][version] = "1"
 projects[breakpoints][subdir] = "contrib"
