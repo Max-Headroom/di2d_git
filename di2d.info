@@ -68,6 +68,7 @@ dependencies[] = live_css
 dependencies[] = nice_menus
 dependencies[] = ctools_custom_content
 dependencies[] = stylizer
+dependencies[] = jquery_update
 
 dependencies[] = panels_mini
 dependencies[] = panels_extra_layouts
