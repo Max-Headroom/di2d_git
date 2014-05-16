@@ -13,6 +13,76 @@ function di2d_setup_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'admin_menu_cache_client';
+  $strongarm->value = 1;
+  $export['admin_menu_cache_client'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'admin_menu_components';
+  $strongarm->value = array(
+    'admin_menu.icon' => TRUE,
+    'admin_menu.menu' => TRUE,
+    'admin_menu.account' => TRUE,
+    'shortcut.links' => FALSE,
+    'admin_menu.search' => FALSE,
+    'admin_menu.users' => FALSE,
+  );
+  $export['admin_menu_components'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'admin_menu_dropdown_default';
+  $strongarm->value = 0;
+  $export['admin_menu_dropdown_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'admin_menu_dropdown_key';
+  $strongarm->value = '`';
+  $export['admin_menu_dropdown_key'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'admin_menu_margin_top';
+  $strongarm->value = 1;
+  $export['admin_menu_margin_top'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'admin_menu_position_fixed';
+  $strongarm->value = 1;
+  $export['admin_menu_position_fixed'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'admin_menu_tweak_modules';
+  $strongarm->value = 0;
+  $export['admin_menu_tweak_modules'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'admin_menu_tweak_permissions';
+  $strongarm->value = 1;
+  $export['admin_menu_tweak_permissions'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'admin_menu_tweak_tabs';
+  $strongarm->value = 0;
+  $export['admin_menu_tweak_tabs'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'admin_toolbar';
   $strongarm->value = array(
     'layout' => 'vertical',
@@ -839,82 +909,6 @@ function di2d_setup_strongarm() {
   $strongarm->name = 'site_mail';
   $strongarm->value = 'admin@maxheadroom.co.za';
   $export['site_mail'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'theme_default';
-  $strongarm->value = 'rfa';
-  $export['theme_default'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'theme_di2d_base_settings';
-  $strongarm->value = array(
-    'toggle_logo' => 0,
-    'toggle_name' => 1,
-    'toggle_slogan' => 0,
-    'toggle_node_user_picture' => 0,
-    'toggle_comment_user_picture' => '0',
-    'toggle_comment_user_verification' => '0',
-    'toggle_favicon' => 1,
-    'toggle_main_menu' => 1,
-    'toggle_secondary_menu' => 1,
-    'default_logo' => 1,
-    'logo_path' => '',
-    'logo_upload' => '',
-    'default_favicon' => 1,
-    'favicon_path' => '',
-    'favicon_upload' => '',
-    'bootstrap_library' => 'cerulean',
-    'fontawesome' => 1,
-    'bootstrap_upload' => '',
-    'build_subtheme' => 0,
-    'magic' => 1,
-    'subtheme_name' => '',
-    'subtheme_base' => 'kalatheme',
-    'always_show_page_title' => 0,
-    'responsive_toggle' => 0,
-    'pane_styles_toggle' => 0,
-    'pane_classes' => array(),
-    'navbar_style' => 'navbar_and_header',
-    'nice_menus_custom_css' => '',
-  );
-  $export['theme_di2d_base_settings'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'theme_kalatheme_settings';
-  $strongarm->value = array(
-    'toggle_logo' => 0,
-    'toggle_name' => 1,
-    'toggle_slogan' => 0,
-    'toggle_favicon' => 1,
-    'toggle_main_menu' => 1,
-    'toggle_secondary_menu' => 1,
-    'default_logo' => 1,
-    'logo_path' => '',
-    'logo_upload' => '',
-    'default_favicon' => 1,
-    'favicon_path' => '',
-    'favicon_upload' => '',
-    'bootstrap_library' => 'cerulean',
-    'fontawesome' => 1,
-    'bootstrap_upload' => '',
-    'build_subtheme' => 0,
-    'magic' => 1,
-    'subtheme_name' => '',
-    'subtheme_base' => 'kalatheme',
-    'always_show_page_title' => 0,
-    'responsive_toggle' => 0,
-    'pane_styles_toggle' => 0,
-    'pane_classes' => array(),
-    'navbar_style' => 'navbar_static_top',
-    'nice_menus_custom_css' => '',
-  );
-  $export['theme_kalatheme_settings'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

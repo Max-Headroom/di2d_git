@@ -12,9 +12,24 @@
 .panels-dnd #panel-region-top {width: 98.0%;}
 .panels-dnd #panel-region-bottom {width: 98.0%;}
 
+.panels-dnd #panel-region-row1 {width: 98.0%;}
+.panels-dnd #panel-region-row2 {width: 98.0%;}
+.panels-dnd #panel-region-row3 {width: 98.0%;}
+.panels-dnd #panel-region-row4 {width: 98.0%;}
+.panels-dnd #panel-region-row5 {width: 98.0%;}
+
 .panels-dnd .bootstrap-threecol-stacked #panel-region-left {width: 31.333%;}
 .panels-dnd .bootstrap-threecol-stacked #panel-region-middle {width: 31.333%;}
 .panels-dnd .bootstrap-threecol-stacked #panel-region-right {width: 31.333%;}
 
 .panels-dnd .bootstrap-twocol-stacked #panel-region-left {width: 48.0%;}
 .panels-dnd .bootstrap-twocol-stacked #panel-region-right {width: 48.0%;}
+
+.panels-dnd .bootstrap-twocol-onepage #panel-region-left1 {width: 48.0%;}
+.panels-dnd .bootstrap-twocol-onepage #panel-region-right1 {width: 48.0%;}
+.panels-dnd .bootstrap-twocol-onepage #panel-region-left2 {width: 48.0%;}
+.panels-dnd .bootstrap-twocol-onepage #panel-region-right2 {width: 48.0%;}
+.panels-dnd .bootstrap-twocol-onepage #panel-region-left3 {width: 48.0%;}
+.panels-dnd .bootstrap-twocol-onepage #panel-region-right3 {width: 48.0%;}
+.panels-dnd .bootstrap-twocol-onepage #panel-region-left4 {width: 48.0%;}
+.panels-dnd .bootstrap-twocol-onepage #panel-region-right4 {width: 48.0%;}

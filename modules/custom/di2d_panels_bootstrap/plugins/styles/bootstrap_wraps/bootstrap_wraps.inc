@@ -428,6 +428,7 @@ function _bootstrap_wraps_column_classes($vars) {
   $layouts = array(
       'bootstrap_twocol_stacked',
       'bootstrap_threecol_stacked',
+      'bootstrap_twocol_onepage',
   );
 
   if (in_array($display->layout, $layouts) && $panes) {
@@ -459,7 +460,7 @@ function _bootstrap_wraps_column_classes($vars) {
 }
 
 /**
- * Create a region wrapper from provided attributes.
+ * Create a region class wrapper from provided attributes.
  *
  * @return array
  *   Array with prefix and suffix keys.
@@ -483,11 +484,15 @@ function _bootstrap_wraps_class_wrapper($item = array()) {
 }
 
 function _bootstrap_wraps_get_default_column_size($layout, $pid) {
-  if (in_array($pid, array('top', 'bottom'))) {
+  if (in_array($pid, array('top', 'bottom', 'row1', 'row2', 'row3', 'row4', 'row5'))) {
     return 12;
   }
 
   if ($layout == 'bootstrap_twocol_stacked') {
+    return 6;
+  }
+
+  if ($layout == 'bootstrap_twocol_onepage') {
     return 6;
   }
 
