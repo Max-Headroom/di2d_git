@@ -59,7 +59,7 @@ function di2d_panels_bootstrap_block_configure($delta = '') {
         '#type' => 'textarea',
         '#default_value' => variable_get('bootstrap_section_menu_text', ''),
         '#title' => t('Menu sections'),
-        '#states' => array(
+        '#states' => array(//does not work in block's settings. Oh well.
             'visible' => array(
                 ':input[name="menu_type"]' => array(
                     array('value' => 'section'),
@@ -102,6 +102,7 @@ function di2d_panels_bootstrap_block_save($delta = '', $edit = array()) {
 }
 
 function di2d_panels_bootstrap_block_view($delta = '') {
+  $block = array();
   switch ($delta) {
     case 'bootstrap_main_menu_block':
       $block['subject'] = t('Menu');
