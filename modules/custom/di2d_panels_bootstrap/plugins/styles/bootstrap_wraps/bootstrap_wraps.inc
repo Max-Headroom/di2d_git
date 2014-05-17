@@ -81,8 +81,8 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
   $pane_style_default_value = isset($style_settings['pane_style']) ? $style_settings['pane_style'] : '';
   $pane_options = array(
       'container' => 'Container',
-      'start-container' => 'Start Container (For groups)',
-      'end-container' => 'End Container (For groups)',
+      //'start-container' => 'Start Container (For groups)',
+      // 'end-container' => 'End Container (For groups)',
       'pull-left' => 'Float Left',
       'pull-right' => 'Float Right',
       'clearfix' => 'Clearfix',
@@ -431,7 +431,7 @@ function _bootstrap_wraps_column_classes($vars) {
       'bootstrap_twocol_onepage',
   );
 
-  if (in_array($display->layout, $layouts) && $panes) {
+  if (in_array($display->layout, $layouts)) {
     $class = array('panel-panel', $vars['region_id']);
 
     foreach ($column_sizes as $size) {
@@ -439,22 +439,21 @@ function _bootstrap_wraps_column_classes($vars) {
       $offset_size = 'offset_size_' . $size;
       $push_size = 'push_size_' . $size;
       $pull_size = 'pull_size_' . $size;
-      if (isset($settings[$column_size]) && !empty($settings[$column_size])) {
-        $class[] = 'col-' . $size . '-' . $settings[$column_size];
+      if (isset($settings['column'][$column_size]) && !empty($settings['column'][$column_size])) {
+        $class[] = 'col-' . $size . '-' . $settings['column'][$column_size];
       }
-      if (isset($settings[$offset_size]) && !empty($settings[$offset_size])) {
-        $class[] = 'col-' . $size . '-offset-' . $settings[$offset_size];
+      if (isset($settings['offset'][$offset_size]) && !empty($settings['offset'][$offset_size])) {
+        $class[] = 'col-' . $size . '-offset-' . $settings['offset'][$offset_size];
       }
-      if (isset($settings[$push_size]) && !empty($settings[$push_size])) {
-        $class[] = 'col-' . $size . '-push-' . $settings[$push_size];
+      if (isset($settings['push'][$push_size]) && !empty($settings['push'][$push_size])) {
+        $class[] = 'col-' . $size . '-push-' . $settings['push'][$push_size];
       }
-      if (isset($settings[$pull_size]) && !empty($settings[$pull_size])) {
-        $class[] = 'col-' . $size . '-pull-' . $settings[$pull_size];
+      if (isset($settings['pull'][$pull_size]) && !empty($settings['pull'][$pull_size])) {
+        $class[] = 'col-' . $size . '-pull-' . $settings['pull'][$pull_size];
       }
     }
 
     $class = ' ' . implode(' ', $class);
-
     return $class;
   }
 }

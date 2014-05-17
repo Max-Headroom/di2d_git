@@ -5,7 +5,7 @@
  */
 // Plugin definition
 $plugin = array(
-    'title' => t('Two Columns Stacked'),
+    'title' => t('Two Columns Onepage'),
     'category' => t('Bootstrap'),
     'icon' => 'bootstrap_twocol_onepage.png',
     'theme' => 'bootstrap_twocol_onepage',
