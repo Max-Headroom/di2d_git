@@ -13,12 +13,148 @@ function di2d_panels_bootstrap_ctools_plugin_directory($module, $plugin) {
   }
 }
 
+/**
+ * Implements hook_block_info().
+ *
+ */
+function di2d_panels_bootstrap_block_info() {
+
+  $blocks['bootstrap_main_menu_block'] = array(
+      'info' => t('Bootstrap main menu'),
+  );
+
+  return $blocks;
+}
+
+function di2d_panels_bootstrap_block_configure($delta = '') {
+  $form = array();
+  if ($delta == 'bootstrap_main_menu_block') {
+
+    $form['bootstrap_menu_affix_offset_top'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Affix Offset Top (px)'),
+        '#default_value' => variable_get('bootstrap_menu_affix_offset_top', ''),
+        '#description' => t('Offset in px. Leave empty when not used')
+    );
+    $form['bootstrap_menu_affix_offset_bottom'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Affix Offset Bottom (px)'),
+        '#default_value' => variable_get('bootstrap_menu_affix_offset_bottom', ''),
+        '#description' => t('Offset in px. Leave empty when not used')
+    );
+
+    $form['bootstrap_menu_type'] = array(
+        '#type' => 'select',
+        '#title' => t('Menu type'),
+        '#description' => t(''),
+        '#options' => array(
+            'main' => 'Drupal Main menu',
+            'section' => 'Section anchor menu',
+        //'custom' => 'Custom menu links',
+        ),
+        '#default_value' => variable_get('bootstrap_menu_type', 'main'),
+    );
+    $form['bootstrap_section_menu_text'] = array(
+        '#description' => t('Enter each menu item on a new line. In the form of section number|Item name. '),
+        '#type' => 'textarea',
+        '#default_value' => variable_get('bootstrap_section_menu_text', ''),
+        '#title' => t('Menu sections'),
+        '#states' => array(
+            'visible' => array(
+                ':input[name="menu_type"]' => array(
+                    array('value' => 'section'),
+                ),
+            ),
+        ),
+    );
+  }
+  return $form;
+}
+
+function di2d_panels_bootstrap_block_save($delta = '', $edit = array()) {
+
+  if ($delta == 'bootstrap_main_menu_block') {
+    variable_set('bootstrap_menu_type', $edit['bootstrap_menu_type']);
+    variable_set('bootstrap_menu_affix_offset_top', $edit['bootstrap_menu_affix_offset_top']);
+    variable_set('bootstrap_menu_affix_offset_bottom', $edit['bootstrap_menu_affix_offset_bottom']);
+
+    if (isset($edit['bootstrap_section_menu_text'])) {
+      $values = array();
+      $list = explode("\n", $edit['bootstrap_section_menu_text']);
+      $list = array_map('trim', $list);
+      $list = array_filter($list, 'strlen');
+
+      foreach ($list as $position => $text) {
+        $value = $key = FALSE;
+
+        // Check for an explicit key.
+        $matches = array();
+        if (preg_match('/(.*)\|(.*)/', $text, $matches)) {
+          $key = $matches[1];
+          $value = $matches[2];
+        }
+        $values[$key] = $value;
+      }
+      variable_set('bootstrap_menu_array', $values);
+    }
+  }
+  return;
+}
+
+function di2d_panels_bootstrap_block_view($delta = '') {
+  switch ($delta) {
+    case 'bootstrap_main_menu_block':
+      $block['subject'] = t('Menu');
+      $block['content'] = di2d_panels_bootstrap_block_content();
+      break;
+  }
+  return $block;
+}
+
+function di2d_panels_bootstrap_block_content() {
+  $menu_type = variable_get('bootstrap_menu_type', 'main');
+  $menu_array = variable_get('bootstrap_menu_array', array());
+  $offset_top = variable_get('bootstrap_menu_affix_offset_top', '');
+  $offset_bottom = variable_get('bootstrap_menu_affix_offset_bottom', '');
+  $items = array();
+
+  switch ($menu_type) {
+    case 'main':
+      $tree = menu_tree_all_data('main-menu');
+      foreach ($tree as $branch) {
+        $items[$branch['link']['link_path']] = $branch['link']['link_title'];
+      }
+      break;
+
+    case 'section':
+      foreach ($menu_array as $key => $value) {
+        $items['#section' . $key] = $value;
+      }
+      break;
+  }
+
+  $affix_styles = '';
+  if (isset($offset_top) && $offset_top) {
+    //<div data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+    $affix_styles = '<div';
+    $affix_styles .= ' data-spy="affix"';
+    $affix_styles .= isset($offset_top) ? ' data-offset-top="' . $offset_top . '"' : 0;
+
+    if (isset($offset_bottom) && $offset_bottom) {
+      $affix_styles .= ' data-offset-bottom = "' . $offset_bottom . '"';
+    }
+    $affix_styles .= '>';
+  }
+  return theme('bootstrap_main_menu', array('items' => $items, 'affix' => $affix_styles));
+}
+
 function di2d_panels_bootstrap_theme() {
   $theme = array();
 
   $theme['bootstrap_main_menu'] = array(
       'variables' => array(
           'items' => array(),
+          'affix' => '',
       ),
       'path' => drupal_get_path('module', 'di2d_panels_bootstrap') . '/theme',
       'template' => 'bootstrap-main-menu',
