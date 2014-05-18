@@ -15,7 +15,7 @@ projects[di2d][download][branch] = "7.2"
 projects[views_bulk_operations][version] = "3"
 projects[views_bulk_operations][subdir] = "contrib"
 
-projects[admin_menu][version] = "3"
+projects[admin_menu][version] = "3.x-dev"
 projects[admin_menu][subdir] = "contrib"
 
 projects[admin_menu_dropdown][version] = "3"
@@ -88,7 +88,7 @@ projects[field_group][subdir] = "contrib"
 projects[field_group_multiple][version] = "1"
 projects[field_group_multiple][subdir] = "contrib"
 
-projects[fieldable_panels_panes][version] = "1"
+projects[fieldable_panels_panes][version] = "1.x-dev"
 projects[fieldable_panels_panes][subdir] = "contrib"
 
 projects[file_entity][version] = "2"
