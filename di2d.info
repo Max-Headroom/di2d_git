@@ -50,7 +50,6 @@ dependencies[] = fences
 dependencies[] = globalredirect
 dependencies[] = googleanalytics
 dependencies[] = honeypot
-dependencies[] = lightbox2
 dependencies[] = live_css
 dependencies[] = nice_menus
 dependencies[] = ctools_custom_content
