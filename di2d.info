@@ -1,7 +1,7 @@
 name = DI2D
 distribution_name = DI2D
-description = Drupal In 2 Days based on Panapoly
-core = 7.x-1.3
+description = Drupal In 2 Days with Bootstrap
+core = 7.x
 exclusive = 1
 
 ; Drupal Core
@@ -29,20 +29,7 @@ dependencies[] = update
 dependencies[] = contact
 
 ; Panopoly Foundation
-dependencies[] = panopoly_core
-dependencies[] = panopoly_images
-dependencies[] = panopoly_theme
-dependencies[] = panopoly_magic
 dependencies[] = panopoly_widgets
-dependencies[] = panopoly_admin
-dependencies[] = panopoly_users
-
-; Panopoly Toolset
-dependencies[] = panopoly_pages
-;dependencies[] = panopoly_pages_override
-;dependencies[] = panopoly_search
-;dependencies[] = panopoly_wysiwyg
-dependencies[] = panopoly_di2d_wysiwyg
 
 ; Admin & UI
 dependencies[] = breakpoints
@@ -79,7 +66,6 @@ dependencies[] = uuid
 dependencies[] = variable
 dependencies[] = metatag
 dependencies[] = features_override
-;dependencies[] = bootstrap_library
 dependencies[] = di2d_panels_bootstrap
 dependencies[] = views_bootstrap
 
@@ -88,7 +74,7 @@ dependencies[] = content_lists
 dependencies[] = di2d_setup
 
 
-version = "7.x-1.01"
+version = "7.x-2.01"
 project = "di2d"
 datestamp = "1395553173"
 
