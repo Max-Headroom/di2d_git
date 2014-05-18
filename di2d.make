@@ -85,6 +85,9 @@ projects[fences][subdir] = "contrib"
 projects[field_group][version] = "1"
 projects[field_group][subdir] = "contrib"
 
+projects[field_group_multiple][version] = "1"
+projects[field_group_multiple][subdir] = "contrib"
+
 projects[fieldable_panels_panes][version] = "1"
 projects[fieldable_panels_panes][subdir] = "contrib"
 
