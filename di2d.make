@@ -146,7 +146,7 @@ projects[metatag][subdir] = "contrib"
 projects[modernizr][version] = "3"
 projects[modernizr][subdir] = "contrib"
 
-projects[module_filter][version] = "1"
+projects[module_filter][version] = "2"
 projects[module_filter][subdir] = "contrib"
 
 projects[nice_menus][version] = "2"
