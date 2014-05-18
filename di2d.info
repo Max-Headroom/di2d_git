@@ -69,6 +69,7 @@ dependencies[] = di2d_panels_bootstrap
 dependencies[] = views_bootstrap
 dependencies[] = elements
 dependencies[] = html5_tools
+dependencies[] = field_group
 
 ; Features
 dependencies[] = content_lists

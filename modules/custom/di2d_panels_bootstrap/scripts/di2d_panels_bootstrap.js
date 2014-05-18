@@ -1,5 +1,5 @@
 (function($) {
-  Drupal.behaviors.kalaSpectrum = {
+  Drupal.behaviors.di2dPanels = {
     attach: function(context) {
       $(window).load(function() {
         var firstHeight = $('.equal-row-1').height();
@@ -40,7 +40,7 @@
 //      });
 
       /* highlight the top nav as scrolling occurs */
-      $('body').scrollspy({target: '#nav'});
+      //$('body').scrollspy({target: '#navbar'});
 
       /* smooth scrolling for scroll to top */
       $('.scroll-top').click(function() {
