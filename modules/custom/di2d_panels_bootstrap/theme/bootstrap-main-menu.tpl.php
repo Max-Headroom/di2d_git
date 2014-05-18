@@ -1,13 +1,18 @@
 
 <?php
+drupal_add_css(drupal_get_path('module', 'di2d_panels_bootstrap') . '/css/affix_fixes.css', array('group' => CSS_DEFAULT, 'every_page' => FALSE));
+?>
+
+<?php
 if (isset($variables['affix']) && $variables['affix']) {
   print $variables['affix'];
 }
 ?>
-<div class = "navbar navbar-custom navbar-inverse navbar-static-top" id = "nav">
+<div class = "navbar navbar-custom navbar-inverse navbar-static-top" id = "navbar">
   <div class = "navbar-header">
 
     <button type = "button" class = "navbar-toggle" data-toggle = "collapse" data-target = ".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
       <span class = "icon-bar"></span>
       <span class = "icon-bar"></span>
       <span class = "icon-bar"></span>

@@ -1,0 +1,14 @@
+
+/*
+    Created on : May 18, 2014, 12:02:05 PM
+    Author     : Quentin Campbell
+*/
+
+.affix {
+  top: 20px; /*make 0 after testing*/
+  width: 100%;
+}
+
+.navbar-nav.nav-justified > li {
+  float: none;
+}

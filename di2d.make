@@ -212,9 +212,7 @@ projects[wysiwyg][patches][] = "
 projects[wysiwyg][subdir] = "contrib"
 
 ; Themes
-projects[bootstrap][version] = "3"
-
-
+projects[bootstrap][version] = "3.x-dev"
 
 ; Libraries
 ;libraries[bootstrap][download][type] = "git"
