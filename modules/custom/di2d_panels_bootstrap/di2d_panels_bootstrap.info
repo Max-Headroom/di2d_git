@@ -2,7 +2,7 @@ name = DI2D Panels Bootstrap
 description = Pane & region styles and layouts for panels module using the Twitter Bootstrap css framework. This is a combination and fixes for Panels bootstrap themes, Bootstrap panels UI and custom code.
 package = DI2D
 dependencies[] = panels
-stylesheets[all][] = css/di2d_ipe.css
+
 scripts[] = scripts/di2d_panels_bootstrap.js
 core = 7.x
 

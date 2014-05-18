@@ -99,10 +99,10 @@
     <?php if (!empty($page['highlighted'])): ?>
       <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
     <?php endif; ?>
-    <?php
-    if (!empty($breadcrumb)): print $breadcrumb;
+    <?php if (!empty($breadcrumb)): print $breadcrumb;
     endif;
     ?>
+
     <a id="main-content"></a>
     <?php print render($title_prefix); ?>
     <?php if (!empty($title)): ?>
@@ -121,14 +121,14 @@
     <?php endif; ?>
     <?php print render($page['content']); ?>
 
-    <?php if (!empty($page['sidebar_second'])): ?>
+      <?php if (!empty($page['sidebar_second'])): ?>
       <aside class="col-sm-3" role="complementary">
-        <?php print render($page['sidebar_second']); ?>
+      <?php print render($page['sidebar_second']); ?>
       </aside>  <!-- /#sidebar-second -->
-    <?php endif; ?>
+<?php endif; ?>
 
   </div>
 </div>
 <footer class="footer container">
-  <?php print render($page['footer']); ?>
+<?php print render($page['footer']); ?>
 </footer>

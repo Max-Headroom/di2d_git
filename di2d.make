@@ -94,6 +94,9 @@ projects[fieldable_panels_panes][subdir] = "contrib"
 projects[file_entity][version] = "2"
 projects[file_entity][subdir] = "contrib"
 
+projects[fpa][version] = "2"
+projects[fpa][subdir] = "contrib"
+
 projects[globalredirect][version] = "1"
 projects[globalredirect][subdir] = "contrib"
 
@@ -105,10 +108,6 @@ projects[honeypot][subdir] = "contrib"
 
 projects[html5_tools][version] = "1.x-dev"
 projects[html5_tools][subdir] = "contrib"
-
-projects[panels][version] = "3"
-projects[panels][subdir] = "contrib"
-projects[panels][patches][] = "https://drupal.org/files/issues/undefined_property_notices_fix-2098515-2.patch"
 
 projects[image_resize_filter][version] = "1"
 projects[image_resize_filter][subdir] = "contrib"
@@ -154,6 +153,11 @@ projects[nice_menus][subdir] = "contrib"
 
 projects[panelizer][version] = "3"
 projects[panelizer][subdir] = "contrib"
+
+projects[panels][version] = "3.x-dev"
+projects[panels][subdir] = "contrib"
+projects[panels][patches][] = "https://drupal.org/files/issues/undefined_property_notices_fix-2098515-2.patch"
+projects[panels][patches][] = "https://drupal.org/files/issues/panels-ipe-save-2120849-27.patch"
 
 projects[panels_breadcrumbs][version] = "2"
 projects[panels_breadcrumbs][subdir] = "contrib"
