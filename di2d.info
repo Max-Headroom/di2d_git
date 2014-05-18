@@ -77,6 +77,7 @@ dependencies[] = imce_wysiwyg
 ; Features
 dependencies[] = content_lists
 dependencies[] = di2d_setup
+dependencies[] = di2d_carousel
 
 
 version = "7.x-2.01"

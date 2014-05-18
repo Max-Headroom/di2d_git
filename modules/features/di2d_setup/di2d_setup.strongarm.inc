@@ -376,6 +376,84 @@ function di2d_setup_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'imce_profiles';
+  $strongarm->value = array(
+    1 => array(
+      'name' => 'User-1',
+      'usertab' => 1,
+      'filesize' => 0,
+      'quota' => 0,
+      'tuquota' => 0,
+      'extensions' => '*',
+      'dimensions' => '1200x1200',
+      'filenum' => 0,
+      'directories' => array(
+        0 => array(
+          'name' => '.',
+          'subnav' => 1,
+          'browse' => 1,
+          'upload' => 1,
+          'thumb' => 1,
+          'delete' => 1,
+          'resize' => 1,
+        ),
+      ),
+      'thumbnails' => array(
+        0 => array(
+          'name' => 'Small',
+          'dimensions' => '90x90',
+          'prefix' => 'small_',
+          'suffix' => '',
+        ),
+        1 => array(
+          'name' => 'Medium',
+          'dimensions' => '120x120',
+          'prefix' => 'medium_',
+          'suffix' => '',
+        ),
+        2 => array(
+          'name' => 'Large',
+          'dimensions' => '180x180',
+          'prefix' => 'large_',
+          'suffix' => '',
+        ),
+      ),
+    ),
+    2 => array(
+      'name' => 'Sample profile',
+      'usertab' => 1,
+      'filesize' => 1,
+      'quota' => 2,
+      'tuquota' => 0,
+      'extensions' => 'gif png jpg jpeg',
+      'dimensions' => '800x600',
+      'filenum' => 1,
+      'directories' => array(
+        0 => array(
+          'name' => 'u%uid',
+          'subnav' => 0,
+          'browse' => 1,
+          'upload' => 1,
+          'thumb' => 1,
+          'delete' => 0,
+          'resize' => 0,
+        ),
+      ),
+      'thumbnails' => array(
+        0 => array(
+          'name' => 'Thumb',
+          'dimensions' => '90x90',
+          'prefix' => 'thumb_',
+          'suffix' => '',
+        ),
+      ),
+    ),
+  );
+  $export['imce_profiles'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'live_css_fontsize';
   $strongarm->value = '11px';
   $export['live_css_fontsize'] = $strongarm;
@@ -568,6 +646,13 @@ function di2d_setup_strongarm() {
   $strongarm->name = 'module_filter_visual_aid';
   $strongarm->value = 1;
   $export['module_filter_visual_aid'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'nice_menus_custom_css';
+  $strongarm->value = '';
+  $export['nice_menus_custom_css'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -978,6 +1063,125 @@ function di2d_setup_strongarm() {
   $strongarm->name = 'site_slogan';
   $strongarm->value = '';
   $export['site_slogan'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'theme_default';
+  $strongarm->value = 'orca_bootstrap';
+  $export['theme_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'theme_orca_bootstrap_settings';
+  $strongarm->value = array(
+    'toggle_logo' => 0,
+    'toggle_name' => 1,
+    'toggle_slogan' => 0,
+    'toggle_node_user_picture' => 1,
+    'toggle_comment_user_picture' => 1,
+    'toggle_comment_user_verification' => 1,
+    'toggle_favicon' => 1,
+    'toggle_main_menu' => 1,
+    'toggle_secondary_menu' => 1,
+    'default_logo' => 1,
+    'logo_path' => '',
+    'logo_upload' => '',
+    'default_favicon' => 1,
+    'favicon_path' => '',
+    'favicon_upload' => '',
+    'global__active_tab' => 'edit-theme-settings',
+    'bootstrap__active_tab' => 'edit-advanced',
+    'bootstrap_grid_columns' => '12',
+    'bootstrap_grid_class_prefix' => 'col-md',
+    'bootstrap_region_grid-navigation' => '12',
+    'bootstrap_region_grid-header' => '12',
+    'bootstrap_region_grid-highlighted' => '12',
+    'bootstrap_region_grid-help' => '12',
+    'bootstrap_region_grid-content' => '12',
+    'bootstrap_region_grid-sidebar_first' => '3',
+    'bootstrap_region_grid-sidebar_second' => '3',
+    'bootstrap_region_grid-footer' => '12',
+    'bootstrap_region_grid-page_top' => '12',
+    'bootstrap_region_grid-page_bottom' => '12',
+    'bootstrap_region_grid_dynamic-navigation' => array(),
+    'bootstrap_region_grid_dynamic-header' => array(),
+    'bootstrap_region_grid_dynamic-highlighted' => array(),
+    'bootstrap_region_grid_dynamic-help' => array(),
+    'bootstrap_region_grid_dynamic-content' => array(
+      'sidebar_first' => 'sidebar_first',
+      'sidebar_second' => 'sidebar_second',
+    ),
+    'bootstrap_region_grid_dynamic-sidebar_first' => array(),
+    'bootstrap_region_grid_dynamic-sidebar_second' => array(),
+    'bootstrap_region_grid_dynamic-footer' => array(),
+    'bootstrap_region_grid_dynamic-page_top' => array(),
+    'bootstrap_region_grid_dynamic-page_bottom' => array(),
+    'bootstrap_button_size' => '',
+    'bootstrap_button_colorize' => 1,
+    'bootstrap_button_iconize' => 1,
+    'bootstrap_image_shape' => '',
+    'bootstrap_image_responsive' => 1,
+    'bootstrap_table_bordered' => 0,
+    'bootstrap_table_condensed' => 0,
+    'bootstrap_table_hover' => 1,
+    'bootstrap_table_striped' => 0,
+    'bootstrap_table_responsive' => 1,
+    'bootstrap_breadcrumb' => '2',
+    'bootstrap_breadcrumb_home' => 0,
+    'bootstrap_breadcrumb_title' => 1,
+    'bootstrap_navbar_position' => '',
+    'bootstrap_navbar_inverse' => 0,
+    'bootstrap_region_well-navigation' => '',
+    'bootstrap_region_well-header' => 'well',
+    'bootstrap_region_well-highlighted' => '',
+    'bootstrap_region_well-help' => '',
+    'bootstrap_region_well-content' => '',
+    'bootstrap_region_well-sidebar_first' => 'well',
+    'bootstrap_region_well-sidebar_second' => '',
+    'bootstrap_region_well-footer' => '',
+    'bootstrap_region_well-page_top' => '',
+    'bootstrap_region_well-page_bottom' => '',
+    'bootstrap_anchors_fix' => 1,
+    'bootstrap_anchors_smooth_scrolling' => 1,
+    'bootstrap_popover_enabled' => 1,
+    'bootstrap_popover_animation' => 1,
+    'bootstrap_popover_html' => 0,
+    'bootstrap_popover_placement' => 'right',
+    'bootstrap_popover_selector' => '',
+    'bootstrap_popover_trigger' => array(
+      'click' => 'click',
+      'hover' => 0,
+      'focus' => 0,
+      'manual' => 0,
+    ),
+    'bootstrap_popover_trigger_autoclose' => 1,
+    'bootstrap_popover_title' => '',
+    'bootstrap_popover_content' => '',
+    'bootstrap_popover_delay' => '0',
+    'bootstrap_popover_container' => 'body',
+    'bootstrap_tooltip_enabled' => 1,
+    'bootstrap_tooltip_descriptions' => 1,
+    'bootstrap_tooltip_descriptions_length' => '200',
+    'bootstrap_tooltip_animation' => 1,
+    'bootstrap_tooltip_html' => 0,
+    'bootstrap_tooltip_placement' => 'auto left',
+    'bootstrap_tooltip_selector' => '',
+    'bootstrap_tooltip_trigger' => array(
+      'hover' => 'hover',
+      'focus' => 'focus',
+      'click' => 0,
+      'manual' => 0,
+    ),
+    'bootstrap_tooltip_delay' => '0',
+    'bootstrap_tooltip_container' => 'body',
+    'bootstrap_cdn' => '3.1.1',
+    'bootstrap_bootswatch' => '',
+    'bootstrap_toggle_jquery_error' => 0,
+    'nice_menus_custom_css' => '',
+  );
+  $export['theme_orca_bootstrap_settings'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
