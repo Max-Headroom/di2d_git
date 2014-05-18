@@ -3,6 +3,7 @@ description = Pane & region styles and layouts for panels module using the Twitt
 package = DI2D
 dependencies[] = panels
 stylesheets[all][] = css/di2d_ipe.css
+scripts[] = scripts/di2d_panels_bootstrap.js
 core = 7.x
 
 version = "7.x-1.0-CUSTOM"

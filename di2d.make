@@ -61,6 +61,9 @@ projects[devel][subdir] = "contrib"
 projects[drupal_reset][version] = "1"
 projects[drupal_reset][subdir] = "contrib"
 
+projects[elements][version] = "1"
+projects[elements][subdir] = "contrib"
+
 projects[entity][version] = "1"
 projects[entity][subdir] = "contrib"
 
@@ -96,6 +99,9 @@ projects[google_analytics][subdir] = "contrib"
 
 projects[honeypot][version] = "1"
 projects[honeypot][subdir] = "contrib"
+
+projects[html5_tools][version] = "1.x-dev"
+projects[html5_tools][subdir] = "contrib"
 
 projects[panels][version] = "3"
 projects[panels][subdir] = "contrib"

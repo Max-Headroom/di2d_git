@@ -68,6 +68,8 @@ dependencies[] = metatag
 dependencies[] = features_override
 dependencies[] = di2d_panels_bootstrap
 dependencies[] = views_bootstrap
+dependencies[] = elements
+dependencies[] = html5_tools
 
 ; Features
 dependencies[] = content_lists
