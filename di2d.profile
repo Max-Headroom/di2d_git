@@ -9,10 +9,6 @@ function di2d_install_tasks(&$install_state) {
   // Add our custom CSS file for the installation process
   drupal_add_css(drupal_get_path('profile', 'di2d') . '/css/di2d_install.css');
 
-  // Add the Panopoly theme selection to the installation process
-  require_once(drupal_get_path('module', 'panopoly_theme') . '/panopoly_theme.profile.inc');
-  $tasks = $tasks + panopoly_theme_profile_theme_selection_install_task($install_state);
-
   return $tasks;
 }
 
