@@ -113,6 +113,12 @@ projects[panels][patches][] = "https://drupal.org/files/issues/undefined_propert
 projects[image_resize_filter][version] = "1"
 projects[image_resize_filter][subdir] = "contrib"
 
+projects[imce][version] = "1"
+projects[imce][subdir] = "contrib"
+
+projects[imce_wysiwyg][version] = "1.x-dev"
+projects[imce_wysiwyg][subdir] = "contrib"
+
 projects[jquery_update][version] = "2"
 projects[jquery_update][subdir] = "contrib"
 
@@ -130,15 +136,6 @@ projects[live_css][subdir] = "contrib"
 
 projects[manualcrop][version] = "1"
 projects[manualcrop][subdir] = "contrib"
-
-projects[media][version] = "2"
-projects[media][subdir] = "contrib"
-
-projects[media_vimeo][version] = "2"
-projects[media_vimeo][subdir] = "contrib"
-
-projects[media_youtube][version] = "2"
-projects[media_youtube][subdir] = "contrib"
 
 projects[menu_block][version] = "2"
 projects[menu_block][subdir] = "contrib"
@@ -215,10 +212,13 @@ projects[views_autocomplete_filters][subdir] = "contrib"
 projects[views_bootstrap][version] = "3"
 projects[views_bootstrap][subdir] = "contrib"
 
-projects[wysiwyg][version] = "2.x-dev"
+projects[wysiwyg][version] = 2.x-dev
+projects[wysiwyg][subdir] = contrib
+projects[wysiwyg][patch][1489096] = http://drupal.org/files/wysiwyg-table-format-1489096-7.patch
+projects[wysiwyg][patch][1786732] = http://drupal.org/files/wysiwyg-arbitrary_image_paths_markitup-1786732-3.patch
+projects[wysiwyg][patch][1338956] = http://drupal.org/files/wysiwyg-html5-required-1338956-11.patch
+projects[wysiwyg][patch][1757684] = http://drupal.org/files/wysiwyg-ajax-error-1757684-13.patch
 projects[wysiwyg][patches][] = "http://drupal.org/files/wysiwyg-1802394-4.patch"
-projects[wysiwyg][patches][] = "
-projects[wysiwyg][subdir] = "contrib"
 
 ; Themes
 projects[bootstrap][version] = "3.x-dev"
