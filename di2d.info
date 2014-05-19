@@ -90,6 +90,7 @@ dependencies[] = save_draft
 dependencies[] = simple_gmap
 dependencies[] = strongarm
 dependencies[] = stylizer
+dependencies[] = tablefield
 dependencies[] = uuid
 dependencies[] = variable
 dependencies[] = views_autocomplete_filters

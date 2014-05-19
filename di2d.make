@@ -47,7 +47,7 @@ projects[date][version] = "2"
 projects[date][subdir] = "contrib"
 
 projects[defaultconfig][version] = "1"
-projects[defaultconfig][patches][] = "http://drupal.org/files/fix-defaultconfig_rebuild_all.patch"
+projects[defaultconfig][patches][] = http://drupal.org/files/fix-defaultconfig_rebuild_all.patch
 projects[defaultconfig][subdir] = "contrib"
 
 projects[devel][version] = "1"
@@ -151,8 +151,8 @@ projects[panelizer][subdir] = "contrib"
 
 projects[panels][version] = "3.x-dev"
 projects[panels][subdir] = "contrib"
-projects[panels][patches][] = "https://drupal.org/files/issues/undefined_property_notices_fix-2098515-2.patch"
-projects[panels][patches][] = "https://drupal.org/files/issues/panels-ipe-save-2120849-27.patch"
+projects[panels][patches][] = https://drupal.org/files/issues/undefined_property_notices_fix-2098515-2.patch
+projects[panels][patches][] = https://drupal.org/files/issues/panels-ipe-save-2120849-27.patch
 
 projects[panels_breadcrumbs][version] = "2"
 projects[panels_breadcrumbs][subdir] = "contrib"
@@ -179,7 +179,7 @@ projects[strongarm][version] = "2"
 projects[strongarm][subdir] = "contrib"
 
 projects[tablefield][version] = "2"
-projects[tablefield][patches][] = "http://drupal.org/files/tablefield_event_click_conflict.patch"
+projects[tablefield][patches][] = http://drupal.org/files/tablefield_event_click_conflict.patch
 projects[tablefield][subdir] = "contrib"
 
 projects[token][version] = "1"
@@ -192,7 +192,7 @@ projects[variable][version] = "2"
 projects[variable][subdir] = "contrib"
 
 projects[views][version] = "3"
-projects[views][patches][] = "http://drupal.org/files/views-exposed-sorts-2037469-1.patch"
+projects[views][patches][] = http://drupal.org/files/views-exposed-sorts-2037469-1.patch
 projects[views][subdir] = "contrib"
 
 projects[views_autocomplete_filters][version] = "1"
@@ -209,7 +209,7 @@ projects[wysiwyg][subdir] = contrib
 projects[wysiwyg][patch][1786732] = http://drupal.org/files/wysiwyg-arbitrary_image_paths_markitup-1786732-3.patch
 projects[wysiwyg][patch][1338956] = http://drupal.org/files/wysiwyg-html5-required-1338956-11.patch
 projects[wysiwyg][patch][1757684] = http://drupal.org/files/wysiwyg-ajax-error-1757684-13.patch
-projects[wysiwyg][patches][] = "http://drupal.org/files/wysiwyg-1802394-4.patch"
+projects[wysiwyg][patches][] = http://drupal.org/files/wysiwyg-1802394-4.patch
 
 ; Themes
 projects[bootstrap][version] = "3"
