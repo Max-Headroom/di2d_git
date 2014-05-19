@@ -12,8 +12,6 @@ projects[di2d][type] = "profile"
 projects[di2d][download][branch] = "7.2"
 
 ; Modules
-projects[views_bulk_operations][version] = "3"
-projects[views_bulk_operations][subdir] = "contrib"
 
 projects[admin_menu][version] = "3.x-dev"
 projects[admin_menu][subdir] = "contrib"
@@ -47,9 +45,6 @@ projects[caption_filter][subdir] = "contrib"
 
 projects[date][version] = "2"
 projects[date][subdir] = "contrib"
-
-projects[date_popup_authored][version] = "1"
-projects[date_popup_authored][subdir] = "contrib"
 
 projects[defaultconfig][version] = "1"
 projects[defaultconfig][patches][] = "http://drupal.org/files/fix-defaultconfig_rebuild_all.patch"
@@ -139,9 +134,6 @@ projects[manualcrop][subdir] = "contrib"
 projects[menu_block][version] = "2"
 projects[menu_block][subdir] = "contrib"
 
-projects[metatag][version] = "1"
-projects[metatag][subdir] = "contrib"
-
 projects[modernizr][version] = "3"
 projects[modernizr][subdir] = "contrib"
 
@@ -151,7 +143,7 @@ projects[module_filter][subdir] = "contrib"
 projects[nice_menus][version] = "2"
 projects[nice_menus][subdir] = "contrib"
 
-projects[panelizer][version] = "3"
+projects[panelizer][version] = "3.x-dev"
 projects[panelizer][subdir] = "contrib"
 
 projects[panels][version] = "3.x-dev"
@@ -171,15 +163,8 @@ projects[panels_extra_styles][subdir] = "contrib"
 projects[panels_mini_ipe][version] = "1.x-dev"
 projects[panels_mini_ipe][subdir] = "contrib"
 
-projects[panopoly_widgets][version] = "1"
-projects[panopoly_widgets][subdir] = "panopoly"
-
 projects[pathauto][version] = "1"
-projects[pathauto][patches][] = "http://drupal.org/files/pathauto-persist-936222-130-pathauto-state.patch"
 projects[pathauto][subdir] = "contrib"
-
-projects[pm_existing_pages][version] = "1"
-projects[pm_existing_pages][subdir] = "contrib"
 
 projects[save_draft][version] = "1"
 projects[save_draft][subdir] = "contrib"
@@ -197,9 +182,6 @@ projects[tablefield][subdir] = "contrib"
 projects[token][version] = "1"
 projects[token][subdir] = "contrib"
 
-projects[user_picture_field][version] = "1"
-projects[user_picture_field][subdir] = "contrib"
-
 projects[uuid][version] = "1"
 projects[uuid][subdir] = "contrib"
 
@@ -216,9 +198,11 @@ projects[views_autocomplete_filters][subdir] = "contrib"
 projects[views_bootstrap][version] = "3"
 projects[views_bootstrap][subdir] = "contrib"
 
+projects[views_bulk_operations][version] = "3"
+projects[views_bulk_operations][subdir] = "contrib"
+
 projects[wysiwyg][version] = 2.x-dev
 projects[wysiwyg][subdir] = contrib
-projects[wysiwyg][patch][1489096] = http://drupal.org/files/wysiwyg-table-format-1489096-7.patch
 projects[wysiwyg][patch][1786732] = http://drupal.org/files/wysiwyg-arbitrary_image_paths_markitup-1786732-3.patch
 projects[wysiwyg][patch][1338956] = http://drupal.org/files/wysiwyg-html5-required-1338956-11.patch
 projects[wysiwyg][patch][1757684] = http://drupal.org/files/wysiwyg-ajax-error-1757684-13.patch

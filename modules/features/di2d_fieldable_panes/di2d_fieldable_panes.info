@@ -1,0 +1,16 @@
+name = DI2D Fieldable panes
+core = 7.x
+package = DI2D
+version = 7.x-1.1
+project = di2d_fieldable_panes
+dependencies[] = ctools
+dependencies[] = fieldable_panels_panes
+features[ctools][] = fieldable_panels_panes:fieldable_panels_pane_type:1
+features[features_api][] = api:2
+features[fieldable_panels_pane_type][] = basic_file
+features[fieldable_panels_pane_type][] = image
+features[fieldable_panels_pane_type][] = map
+features[fieldable_panels_pane_type][] = quick_links
+features[fieldable_panels_pane_type][] = table
+features[fieldable_panels_pane_type][] = text
+features[fieldable_panels_pane_type][] = video

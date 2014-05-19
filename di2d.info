@@ -28,57 +28,76 @@ dependencies[] = statistics
 dependencies[] = update
 dependencies[] = contact
 
-; Panopoly Foundation
-dependencies[] = panopoly_widgets
-
 ; Admin & UI
-dependencies[] = breakpoints
-dependencies[] = backports
+
+dependencies[] = admin_devel
 dependencies[] = admin_menu
 dependencies[] = admin_menu_dropdown
-dependencies[] = admin_devel
 dependencies[] = admin_menu_toolbar
-dependencies[] = save_draft
-dependencies[] = module_filter
-dependencies[] = date_popup_authored
-dependencies[] = views_ui
 dependencies[] = admin_views
-dependencies[] = better_watchdog_ui
+dependencies[] = backports
 dependencies[] = backup_migrate
+dependencies[] = better_watchdog_ui
+dependencies[] = breakpoints
 dependencies[] = captcha
+dependencies[] = caption_filter
+dependencies[] = ctools_custom_content
+dependencies[] = date
+dependencies[] = date_date_popup
+dependencies[] = date_views
+dependencies[] = devel
+dependencies[] = di2d_panels_bootstrap
+dependencies[] = elements
+dependencies[] = fape
+dependencies[] = features
+dependencies[] = features_override
 dependencies[] = fences
+dependencies[] = field_group
+dependencies[] = field_group_multiple
+dependencies[] = fieldable_panels_panes
+dependencies[] = file_entity
+dependencies[] = fpa
 dependencies[] = globalredirect
 dependencies[] = googleanalytics
 dependencies[] = honeypot
-dependencies[] = live_css
-dependencies[] = nice_menus
-dependencies[] = ctools_custom_content
-dependencies[] = stylizer
-dependencies[] = jquery_update
-
-dependencies[] = panels_mini
-dependencies[] = panels_extra_layouts
-dependencies[] = panels_extra_styles
-dependencies[] = panels_mini_ipe
-dependencies[] = devel
-dependencies[] = uuid
-dependencies[] = variable
-dependencies[] = metatag
-dependencies[] = features_override
-dependencies[] = di2d_panels_bootstrap
-dependencies[] = views_bootstrap
-dependencies[] = elements
 dependencies[] = html5_tools
-dependencies[] = field_group
-dependencies[] = wysiwyg
+dependencies[] = image_resize_filter
 dependencies[] = imce
 dependencies[] = imce_wysiwyg
+dependencies[] = jquery_update
+dependencies[] = libraries
+dependencies[] = link
+dependencies[] = linkit
+dependencies[] = live_css
+dependencies[] = menu_block
+dependencies[] = metatag
+dependencies[] = modernizr
+dependencies[] = module_filter
+dependencies[] = panelizer
+dependencies[] = panels_breadcrumbs
+dependencies[] = panels_extra_layouts
+dependencies[] = panels_extra_styles
+dependencies[] = panels_mini
+dependencies[] = panels_mini_ipe
+dependencies[] = pathauto
+dependencies[] = save_draft
+dependencies[] = simple_gmap
+dependencies[] = strongarm
+dependencies[] = stylizer
+dependencies[] = uuid
+dependencies[] = variable
+dependencies[] = views_autocomplete_filters
+dependencies[] = views_bootstrap
+dependencies[] = views_bulk_operations
+dependencies[] = views_ui
+dependencies[] = wysiwyg
+
 
 ; Features
 dependencies[] = content_lists
 dependencies[] = di2d_setup
 dependencies[] = di2d_carousel
-
+dependencies[] = di2d_fieldable_panes
 
 version = "7.x-2.01"
 project = "di2d"

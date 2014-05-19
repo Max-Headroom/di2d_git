@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the DI2D Fieldable panes feature.
+ */
+
+include_once 'di2d_fieldable_panes.features.inc';
