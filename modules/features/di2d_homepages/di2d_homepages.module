@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the DI2D Homepages feature.
+ */
+
+include_once 'di2d_homepages.features.inc';

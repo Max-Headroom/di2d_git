@@ -134,6 +134,9 @@ projects[manualcrop][subdir] = "contrib"
 projects[menu_block][version] = "2"
 projects[menu_block][subdir] = "contrib"
 
+projects[metatag][version] = "1"
+projects[metatag][subdir] = "contrib"
+
 projects[modernizr][version] = "3"
 projects[modernizr][subdir] = "contrib"
 
@@ -209,7 +212,7 @@ projects[wysiwyg][patch][1757684] = http://drupal.org/files/wysiwyg-ajax-error-1
 projects[wysiwyg][patches][] = "http://drupal.org/files/wysiwyg-1802394-4.patch"
 
 ; Themes
-projects[bootstrap][version] = "3.x-dev"
+projects[bootstrap][version] = "3"
 
 ; Libraries
 ;libraries[bootstrap][download][type] = "git"
