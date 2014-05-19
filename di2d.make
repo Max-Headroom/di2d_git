@@ -209,7 +209,7 @@ projects[wysiwyg][subdir] = contrib
 projects[wysiwyg][patch][1786732] = http://drupal.org/files/wysiwyg-arbitrary_image_paths_markitup-1786732-3.patch
 projects[wysiwyg][patch][1338956] = http://drupal.org/files/wysiwyg-html5-required-1338956-11.patch
 projects[wysiwyg][patch][1757684] = http://drupal.org/files/wysiwyg-ajax-error-1757684-13.patch
-projects[wysiwyg][patch][1802394] = http://drupal.org/files/wysiwyg-1802394-4.patch
+;projects[wysiwyg][patch][1802394] = http://drupal.org/files/wysiwyg-1802394-4.patch
 
 ; Themes
 projects[bootstrap][version] = "3"
