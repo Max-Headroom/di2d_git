@@ -73,7 +73,7 @@
  * @ingroup themeable
  */
 ?>
-<header id="main-header" role="banner" class="masthead">
+<header id="main-header" role="banner" class="masthead clearfix">
 
   <?php if (!empty($site_name)): ?>
     <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
@@ -81,7 +81,7 @@
 
 </header>
 
-<div class="main-container">
+<div class="main-container container">
 
   <header role="banner" id="page-header">
 
@@ -99,7 +99,8 @@
     <?php if (!empty($page['highlighted'])): ?>
       <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
     <?php endif; ?>
-    <?php if (!empty($breadcrumb)): print $breadcrumb;
+    <?php
+    if (!empty($breadcrumb)): print $breadcrumb;
     endif;
     ?>
 
@@ -121,14 +122,14 @@
     <?php endif; ?>
     <?php print render($page['content']); ?>
 
-      <?php if (!empty($page['sidebar_second'])): ?>
+    <?php if (!empty($page['sidebar_second'])): ?>
       <aside class="col-sm-3" role="complementary">
-      <?php print render($page['sidebar_second']); ?>
+        <?php print render($page['sidebar_second']); ?>
       </aside>  <!-- /#sidebar-second -->
-<?php endif; ?>
+    <?php endif; ?>
 
   </div>
 </div>
 <footer class="footer container">
-<?php print render($page['footer']); ?>
+  <?php print render($page['footer']); ?>
 </footer>

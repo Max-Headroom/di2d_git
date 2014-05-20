@@ -89,6 +89,9 @@ projects[fieldable_panels_panes][subdir] = "contrib"
 projects[file_entity][version] = "2"
 projects[file_entity][subdir] = "contrib"
 
+projects[filefield_sources][version] = "1"
+projects[filefield_sources][subdir] = "contrib"
+
 projects[fpa][version] = "2"
 projects[fpa][subdir] = "contrib"
 
@@ -185,8 +188,8 @@ projects[tablefield][subdir] = "contrib"
 projects[token][version] = "1"
 projects[token][subdir] = "contrib"
 
-projects[uuid][version] = "1"
-projects[uuid][subdir] = "contrib"
+;projects[uuid][version] = "1"
+;projects[uuid][subdir] = "contrib"
 
 projects[variable][version] = "2"
 projects[variable][subdir] = "contrib"
