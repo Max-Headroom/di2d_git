@@ -13,7 +13,6 @@ dependencies[] = php
 dependencies[] = strongarm
 dependencies[] = views
 dependencies[] = wysiwyg
-stylesheets[all][] = css/d12d-basic.css
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2

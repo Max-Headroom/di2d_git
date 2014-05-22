@@ -77,6 +77,7 @@ function di2d_panels_bootstrap_block_save($delta = '', $edit = array()) {
     variable_set('bootstrap_menu_type', $edit['bootstrap_menu_type']);
     variable_set('bootstrap_menu_affix_offset_top', $edit['bootstrap_menu_affix_offset_top']);
     variable_set('bootstrap_menu_affix_offset_bottom', $edit['bootstrap_menu_affix_offset_bottom']);
+    variable_set('bootstrap_section_menu_text', $edit['bootstrap_section_menu_text']);
 
     if (isset($edit['bootstrap_section_menu_text'])) {
       $values = array();
