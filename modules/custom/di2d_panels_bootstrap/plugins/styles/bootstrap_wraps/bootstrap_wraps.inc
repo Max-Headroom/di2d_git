@@ -146,6 +146,7 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
 
   $pane_id_default_value = isset($style_settings['pane_id']) ? $style_settings['pane_id'] : '';
   $pane_id_options = array(
+      '0' => 'None',
       'header' => 'Header',
       'footer' => 'Footer',
   );
@@ -162,6 +163,7 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
 
   $pane_sections_default_value = isset($style_settings['pane_sections']) ? $style_settings['pane_sections'] : '';
   $pane_sections_options = array(
+      '0' => 'None',
       '1' => 'Section 1',
       '2' => 'Section 2',
       '3' => 'Section 3',
