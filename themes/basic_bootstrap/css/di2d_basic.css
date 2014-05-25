@@ -59,3 +59,23 @@ div.panels-ipe-pseudobutton-container a.panels-ipe-change-layout {
 div.panels-ipe-pseudobutton-container a.panels-ipe-startedit {
   padding-left: 27px;
 }
+
+/*CKEditor*/
+.cke_contents {
+height: 250px !important;
+}
+
+/* Googlemaps */
+ .field-name-field-address {
+position: relative;
+padding-bottom: 30%; // This is the aspect ratio
+height: 0;
+overflow: hidden;
+}
+.field-name-field-address iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100% !important;
+height: 100% !important;
+}

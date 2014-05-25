@@ -77,6 +77,9 @@ projects[features_override][subdir] = "contrib"
 projects[fences][version] = "1.x-dev"
 projects[fences][subdir] = "contrib"
 
+projects[field_collection][version] = "1"
+projects[field_collection][subdir] = "contrib"
+
 projects[field_group][version] = "1"
 projects[field_group][subdir] = "contrib"
 
@@ -88,6 +91,9 @@ projects[file_entity][subdir] = "contrib"
 
 projects[filefield_sources][version] = "1"
 projects[filefield_sources][subdir] = "contrib"
+
+projects[formatter_field][version] = "1"
+projects[formatter_field][subdir] = "contrib"
 
 projects[fpa][version] = "2"
 projects[fpa][subdir] = "contrib"

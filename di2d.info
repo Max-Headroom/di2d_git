@@ -28,7 +28,7 @@ dependencies[] = statistics
 dependencies[] = update
 dependencies[] = contact
 
-; Admin & UI
+; Addons
 
 dependencies[] = admin_devel
 dependencies[] = admin_menu
@@ -52,11 +52,13 @@ dependencies[] = fape
 dependencies[] = features
 dependencies[] = features_override
 dependencies[] = fences
+dependencies[] = field_collection
 dependencies[] = field_group
 dependencies[] = field_group_multiple
 dependencies[] = fieldable_panels_panes
 dependencies[] = file_entity
 dependencies[] = filefield_sources
+dependencies[] = formatter_field
 dependencies[] = fpa
 dependencies[] = globalredirect
 dependencies[] = googleanalytics
