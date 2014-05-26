@@ -40,7 +40,7 @@
 //      });
 
       /* highlight the top nav as scrolling occurs */
-      //$('body').scrollspy({target: '#navbar'});
+      // $('body').scrollspy({target: '#navbar'});
 
       /* smooth scrolling for scroll to top */
       $('.scroll-top').click(function() {
@@ -48,7 +48,7 @@
       });
 
       /* smooth scrolling for nav sections */
-      $('#nav .navbar-nav li>a').click(function() {
+      $('#navbar .navbar-nav li>a').click(function() {
         var link = $(this).attr('href');
         var posi = $(link).offset().top;
         $('body,html').animate({scrollTop: posi}, 700);
