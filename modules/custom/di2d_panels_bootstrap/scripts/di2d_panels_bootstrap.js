@@ -40,7 +40,9 @@
 //      });
 
       /* highlight the top nav as scrolling occurs */
-      // $('body').scrollspy({target: '#navbar'});
+      if ( $.isFunction($.fn.scrollspy) ) {
+       $('body').scrollspy({target: '#navbar'});
+       }
 
       /* smooth scrolling for scroll to top */
       $('.scroll-top').click(function() {

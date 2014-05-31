@@ -8,7 +8,9 @@ if (isset($variables['affix']) && $variables['affix']) {
   print $variables['affix'];
 }
 ?>
-<div class = "navbar navbar-custom navbar-inverse navbar-static-top" id = "navbar">
+<div id = "navbar" class = "navbar navbar-custom navbar-inverse navbar-static-top <?php if ($variables['container'] == 'all') {
+  print 'container';
+} ?>">
   <div class = "navbar-header">
 
     <button type = "button" class = "navbar-toggle" data-toggle = "collapse" data-target = ".navbar-collapse">
@@ -20,11 +22,13 @@ if (isset($variables['affix']) && $variables['affix']) {
   </div>
 
   <div class = "collapse navbar-collapse">
-    <ul class = "nav navbar-nav nav-justified">
-      <?php foreach ($variables['items'] as $link => $title):
-        ?>
+    <ul class = "nav navbar-nav nav-justified <?php if ($variables['container'] == 'items') {
+  print 'container';
+} ?>">
+<?php foreach ($variables['items'] as $link => $title):
+  ?>
         <li><a href="<?php print $link; ?>" data-toggle="collapse" data-target=".navbar-collapse"><?php print $title; ?></a></li>
-      <?php endforeach; ?>
+<?php endforeach; ?>
     </ul>
   </div>
 </div><!--/.navbar -->

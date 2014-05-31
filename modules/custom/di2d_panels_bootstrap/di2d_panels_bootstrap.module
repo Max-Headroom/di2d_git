@@ -1,5 +1,9 @@
 <?php
 
+function di2d_panels_bootstrap_init() {
+  drupal_add_css(drupal_get_path('module', 'di2d_panels_bootstrap') . '/css/di2d_basic.css', array('group' => CSS_THEME, 'every_page' => TRUE));
+}
+
 /**
  * Implements hook_ctools_plugin_directory()
  */
@@ -43,6 +47,14 @@ function di2d_panels_bootstrap_block_configure($delta = '') {
         '#description' => t('Offset in px. Leave empty when not used')
     );
 
+    $form['bootstrap_menu_container'] = array(
+        '#type' => 'radios',
+        '#title' => t('Container'),
+        '#options' => array('none' => 'None', 'all' => 'All', 'items' => 'Items only'),
+        '#default_value' => variable_get('bootstrap_menu_container', 'none'),
+        '#description' => t('To have menu items inside a container')
+    );
+
     $form['bootstrap_menu_type'] = array(
         '#type' => 'select',
         '#title' => t('Menu type'),
@@ -78,6 +90,7 @@ function di2d_panels_bootstrap_block_save($delta = '', $edit = array()) {
     variable_set('bootstrap_menu_affix_offset_top', $edit['bootstrap_menu_affix_offset_top']);
     variable_set('bootstrap_menu_affix_offset_bottom', $edit['bootstrap_menu_affix_offset_bottom']);
     variable_set('bootstrap_section_menu_text', $edit['bootstrap_section_menu_text']);
+    variable_set('bootstrap_menu_container', $edit['bootstrap_menu_container']);
 
     if (isset($edit['bootstrap_section_menu_text'])) {
       $values = array();
@@ -118,6 +131,7 @@ function di2d_panels_bootstrap_block_content() {
   $menu_array = variable_get('bootstrap_menu_array', array());
   $offset_top = variable_get('bootstrap_menu_affix_offset_top', '');
   $offset_bottom = variable_get('bootstrap_menu_affix_offset_bottom', '');
+  $container = variable_get('bootstrap_menu_container', 'none');
   $items = array();
 
   switch ($menu_type) {
@@ -147,7 +161,7 @@ function di2d_panels_bootstrap_block_content() {
     }
     $affix_styles .= '>';
   }
-  return theme('bootstrap_main_menu', array('items' => $items, 'affix' => $affix_styles));
+  return theme('bootstrap_main_menu', array('items' => $items, 'affix' => $affix_styles, 'container' => $container));
 }
 
 function di2d_panels_bootstrap_theme() {
@@ -157,6 +171,7 @@ function di2d_panels_bootstrap_theme() {
       'variables' => array(
           'items' => array(),
           'affix' => '',
+          'container' => 'none'
       ),
       'path' => drupal_get_path('module', 'di2d_panels_bootstrap') . '/theme',
       'template' => 'bootstrap-main-menu',

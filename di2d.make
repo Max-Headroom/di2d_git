@@ -92,6 +92,9 @@ projects[file_entity][subdir] = "contrib"
 projects[filefield_sources][version] = "1"
 projects[filefield_sources][subdir] = "contrib"
 
+projects[fontyourface][version] = "2.x-dev"
+projects[fontyourface][subdir] = "contrib"
+
 projects[formatter_field][version] = "1"
 projects[formatter_field][subdir] = "contrib"
 
@@ -131,8 +134,8 @@ projects[link][subdir] = "contrib"
 projects[linkit][version] = "2"
 projects[linkit][subdir] = "contrib"
 
-projects[live_css][version] = "2"
-projects[live_css][subdir] = "contrib"
+;projects[live_css][version] = "2"
+;projects[live_css][subdir] = "contrib"
 
 projects[manualcrop][version] = "1"
 projects[manualcrop][subdir] = "contrib"

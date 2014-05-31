@@ -77,7 +77,6 @@ function theme_bootstrap_wraps_render_pane($vars) {
  * Options for the Panels style plugin to help style panes.
  */
 function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $type, $form_state) {
-
   $pane_style_default_value = isset($style_settings['pane_style']) ? $style_settings['pane_style'] : '';
   $pane_options = array(
       'container' => 'Container',
@@ -210,7 +209,7 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
       '#type' => 'select',
       '#title' => t('Column size XS'),
       '#options' => $options,
-      '#default_value' => isset($style_settings['column_size_xs']) ? $style_settings['column_size_xs'] : _bootstrap_wraps_get_default_column_size($display->layout, $pid),
+      '#default_value' => isset($style_settings['column']['column_size_xs']) ? $style_settings['column']['column_size_xs'] : _bootstrap_wraps_get_default_column_size($display->layout, $pid),
       '#description' => t('Column size for Extra small devices (col-xs-*)'),
   );
 
@@ -218,7 +217,7 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
       '#type' => 'select',
       '#title' => t('Column size SM'),
       '#options' => $options,
-      '#default_value' => isset($style_settings['column_size_sm']) ? $style_settings['column_size_sm'] : _bootstrap_wraps_get_default_column_size($display->layout, $pid),
+      '#default_value' => isset($style_settings['column']['column_size_sm']) ? $style_settings['column']['column_size_sm'] : _bootstrap_wraps_get_default_column_size($display->layout, $pid),
       '#description' => t('Column size for Small devices (col-sm-*)'),
   );
 
@@ -226,7 +225,7 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
       '#type' => 'select',
       '#title' => t('Сolumn size MD'),
       '#options' => $options,
-      '#default_value' => isset($style_settings['column_size_md']) ? $style_settings['column_size_md'] : _bootstrap_wraps_get_default_column_size($display->layout, $pid),
+      '#default_value' => isset($style_settings['column']['column_size_md']) ? $style_settings['column']['column_size_md'] : _bootstrap_wraps_get_default_column_size($display->layout, $pid),
       '#description' => t('Column size for Medium devices (col-md-*)'),
   );
 
@@ -234,7 +233,7 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
       '#type' => 'select',
       '#title' => t('Column size LG'),
       '#options' => $options,
-      '#default_value' => isset($style_settings['column_size_lg']) ? $style_settings['column_size_lg'] : _bootstrap_wraps_get_default_column_size($display->layout, $pid),
+      '#default_value' => isset($style_settings['column']['column_size_lg']) ? $style_settings['column']['column_size_lg'] : _bootstrap_wraps_get_default_column_size($display->layout, $pid),
       '#description' => t('Column size for Large devices (col-lg-*)'),
   );
 
@@ -250,28 +249,28 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
       '#type' => 'select',
       '#title' => t('Offset size XS'),
       '#options' => $options,
-      '#default_value' => isset($style_settings['offset_size_xs']) ? $style_settings['offset_size_xs'] : 0,
+      '#default_value' => isset($style_settings['offset']['offset_size_xs']) ? $style_settings['offset']['offset_size_xs'] : 0,
   );
 
   $form['offset']['offset_size_sm'] = array(
       '#type' => 'select',
       '#title' => t('Offset size SM'),
       '#options' => $options,
-      '#default_value' => isset($style_settings['offset_size_sm']) ? $style_settings['offset_size_sm'] : 0,
+      '#default_value' => isset($style_settings['offset']['offset_size_sm']) ? $style_settings['offset']['offset_size_sm'] : 0,
   );
 
   $form['offset']['offset_size_md'] = array(
       '#type' => 'select',
       '#title' => t('Offset size MD'),
       '#options' => $options,
-      '#default_value' => isset($style_settings['offset_size_md']) ? $style_settings['offset_size_md'] : 0,
+      '#default_value' => isset($style_settings['offset']['offset_size_md']) ? $style_settings['offset']['offset_size_md'] : 0,
   );
 
   $form['offset']['offset_size_lg'] = array(
       '#type' => 'select',
       '#title' => t('Offset size LG'),
       '#options' => $options,
-      '#default_value' => isset($style_settings['offset_size_lg']) ? $style_settings['offset_size_lg'] : 0,
+      '#default_value' => isset($style_settings['offset']['offset_size_lg']) ? $style_settings['offset']['offset_size_lg'] : 0,
   );
 
   $form['push'] = array(
@@ -287,28 +286,28 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
       '#type' => 'select',
       '#title' => t('Push size XS'),
       '#options' => $options,
-      '#default_value' => isset($style_settings['push_size_xs']) ? $style_settings['push_size_xs'] : 0,
+      '#default_value' => isset($style_settings['push']['push_size_xs']) ? $style_settings['push']['push_size_xs'] : 0,
   );
 
   $form['push']['push_size_sm'] = array(
       '#type' => 'select',
       '#title' => t('Push size SM'),
       '#options' => $options,
-      '#default_value' => isset($style_settings['push_size_sm']) ? $style_settings['push_size_sm'] : 0,
+      '#default_value' => isset($style_settings['push']['push_size_sm']) ? $style_settings['push']['push_size_sm'] : 0,
   );
 
   $form['push']['push_size_md'] = array(
       '#type' => 'select',
       '#title' => t('Push size MD'),
       '#options' => $options,
-      '#default_value' => isset($style_settings['push_size_md']) ? $style_settings['push_size_md'] : 0,
+      '#default_value' => isset($style_settings['push']['push_size_md']) ? $style_settings['push']['push_size_md'] : 0,
   );
 
   $form['push']['push_size_lg'] = array(
       '#type' => 'select',
       '#title' => t('Push size LG'),
       '#options' => $options,
-      '#default_value' => isset($style_settings['push_size_lg']) ? $style_settings['push_size_lg'] : 0,
+      '#default_value' => isset($style_settings['push']['push_size_lg']) ? $style_settings['push']['push_size_lg'] : 0,
   );
 
   $form['pull'] = array(
@@ -324,28 +323,28 @@ function bootstrap_wraps_pane_settings_form($style_settings, $display, $pid, $ty
       '#type' => 'select',
       '#title' => t('Pull size XS'),
       '#options' => $options,
-      '#default_value' => isset($style_settings['pull_size_xs']) ? $style_settings['pull_size_xs'] : 0,
+      '#default_value' => isset($style_settings['pull']['pull_size_xs']) ? $style_settings['pull']['pull_size_xs'] : 0,
   );
 
   $form['pull']['pull_size_sm'] = array(
       '#type' => 'select',
       '#title' => t('Pull size SM'),
       '#options' => $options,
-      '#default_value' => isset($style_settings['pull_size_sm']) ? $style_settings['pull_size_sm'] : 0,
+      '#default_value' => isset($style_settings['pull']['pull_size_sm']) ? $style_settings['pull']['pull_size_sm'] : 0,
   );
 
   $form['pull']['pull_size_md'] = array(
       '#type' => 'select',
       '#title' => t('Pull size MD'),
       '#options' => $options,
-      '#default_value' => isset($style_settings['pull_size_md']) ? $style_settings['pull_size_md'] : 0,
+      '#default_value' => isset($style_settings['pull']['pull_size_md']) ? $style_settings['pull']['pull_size_md'] : 0,
   );
 
   $form['pull']['pull_size_lg'] = array(
       '#type' => 'select',
       '#title' => t('Pull size LG'),
       '#options' => $options,
-      '#default_value' => isset($style_settings['pull_size_lg']) ? $style_settings['pull_size_lg'] : 0,
+      '#default_value' => isset($style_settings['pull']['pull_size_lg']) ? $style_settings['pull']['pull_size_lg'] : 0,
   );
 
   return $form;
