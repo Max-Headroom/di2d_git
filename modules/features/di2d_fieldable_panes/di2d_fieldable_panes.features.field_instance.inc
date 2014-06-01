@@ -123,6 +123,27 @@ function di2d_fieldable_panes_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'imce' => 'imce',
+            'reference' => 0,
+            'remote' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+          ),
+        ),
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
@@ -139,20 +160,20 @@ function di2d_fieldable_panes_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'simple_gmap',
         'settings' => array(
-          'iframe_height' => 200,
-          'iframe_width' => 200,
+          'iframe_height' => 350,
+          'iframe_width' => 1200,
           'include_link' => 1,
           'include_map' => 1,
-          'include_static_map' => 0,
-          'include_text' => 1,
+          'include_static_map' => 1,
+          'include_text' => 0,
           'information_bubble' => 1,
           'langcode' => 'en',
           'link_text' => 'View larger map',
           'map_type' => 'm',
-          'zoom_level' => 14,
+          'zoom_level' => 16,
         ),
         'type' => 'simple_gmap',
         'weight' => 0,
