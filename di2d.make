@@ -229,6 +229,12 @@ projects[bootstrap][version] = "3"
 ;libraries[bootstrap][directory_name] = "bootstrap"
 ;libraries[bootstrap][type] = "library"
 
+;libraries[bootstrap][download][type] = "get"
+;libraries[bootstrap][download][url] = "https://github.com/twbs/bootstrap/archive/v3.0.2.zip"
+;libraries[bootstrap][directory_name] = "bootstrap"
+;libraries[bootstrap][destination] = "themes/bootstrap"
+;libraries[bootstrap][overwrite] = TRUE
+
 libraries[ckeditor][download][type] = "get"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.0/ckeditor_4.4.0_standard.zip"
 libraries[ckeditor][directory_name] = "ckeditor"

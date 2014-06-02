@@ -1068,7 +1068,7 @@ function di2d_setup_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'theme_default';
-  $strongarm->value = 'orca_bootstrap';
+  $strongarm->value = 'basic_bootstrap';
   $export['theme_default'] = $strongarm;
 
   $strongarm = new stdClass();
