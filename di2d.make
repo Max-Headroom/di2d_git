@@ -223,17 +223,20 @@ projects[wysiwyg][patch][1786732] = http://drupal.org/files/wysiwyg-arbitrary_im
 ; Themes
 projects[bootstrap][version] = "3"
 
-; Libraries
-;libraries[bootstrap][download][type] = "git"
-;libraries[bootstrap][download][url] = " https://github.com/twbs/bootstrap.git"
-;libraries[bootstrap][directory_name] = "bootstrap"
-;libraries[bootstrap][type] = "library"
+projects[basic_bootstrap][download][type] = "git"
+projects[basic_bootstrap][download][url] = "https://github.com/Max-Headroom/basic_bootstrap.git"
+projects[basic_bootstrap][type] = "theme"
+projects[basic_bootstrap][download][branch] = "7.3"
+projects[basic_bootstrap][destination] = "sites/all/themes"
 
-;libraries[bootstrap][download][type] = "get"
-;libraries[bootstrap][download][url] = "https://github.com/twbs/bootstrap/archive/v3.0.2.zip"
-;libraries[bootstrap][directory_name] = "bootstrap"
-;libraries[bootstrap][destination] = "themes/bootstrap"
-;libraries[bootstrap][overwrite] = TRUE
+; Libraries
+
+libraries[bootstrap][download][type] = "get"
+libraries[bootstrap][download][url] = "https://github.com/twbs/bootstrap/archive/v3.0.2.zip"
+libraries[bootstrap][directory_name] = "bootstrap"
+libraries[bootstrap][destination] = "themes/bootstrap"
+libraries[bootstrap][overwrite] = TRUE
+libraries[bootstrap][destination] = "sites/all/themes/basic_bootstrap"
 
 libraries[ckeditor][download][type] = "get"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.0/ckeditor_4.4.0_standard.zip"
