@@ -160,8 +160,8 @@ projects[panelizer][subdir] = "contrib"
 
 projects[panels][version] = "3.x-dev"
 projects[panels][subdir] = "contrib"
-projects[panels][patch][2098515] = https://drupal.org/files/issues/undefined_property_notices_fix-2098515-2.patch
-projects[panels][patch][2120849] = https://drupal.org/files/issues/panels-ipe-save-2120849-27.patch
+;projects[panels][patch][2098515] = https://drupal.org/files/issues/undefined_property_notices_fix-2098515-2.patch
+;projects[panels][patch][2120849] = https://drupal.org/files/issues/panels-ipe-save-2120849-27.patch
 
 projects[panels_breadcrumbs][version] = "2"
 projects[panels_breadcrumbs][subdir] = "contrib"
@@ -172,8 +172,8 @@ projects[panels_extra_layouts][subdir] = "contrib"
 projects[panels_extra_styles][version] = "1"
 projects[panels_extra_styles][subdir] = "contrib"
 
-projects[panels_mini_ipe][version] = "1.x-dev"
-projects[panels_mini_ipe][subdir] = "contrib"
+;projects[panels_mini_ipe][version] = "1.x-dev"
+;projects[panels_mini_ipe][subdir] = "contrib"
 
 projects[pathauto][version] = "1"
 projects[pathauto][subdir] = "contrib"
@@ -216,9 +216,8 @@ projects[views_bulk_operations][subdir] = "contrib"
 projects[wysiwyg][version] = 2.x-dev
 projects[wysiwyg][subdir] = contrib
 projects[wysiwyg][patch][1786732] = http://drupal.org/files/wysiwyg-arbitrary_image_paths_markitup-1786732-3.patch
-;projects[wysiwyg][patch][1338956] = http://drupal.org/files/wysiwyg-html5-required-1338956-11.patch
-;projects[wysiwyg][patch][1757684] = http://drupal.org/files/wysiwyg-ajax-error-1757684-13.patch
-;projects[wysiwyg][patch][1802394] = http://drupal.org/files/wysiwyg-1802394-4.patch
+projects[wysiwyg][patch][1338956] = https://drupal.org/files/issues/wysiwyg-html5-required-1338956-114.patch
+
 
 ; Themes
 projects[bootstrap][version] = "3"
@@ -227,7 +226,7 @@ projects[bootstrap][version] = "3"
 ; Libraries
 
 libraries[ckeditor][download][type] = "get"
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.0/ckeditor_4.4.0_standard.zip"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.1/ckeditor_4.4.1_full.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
 libraries[ckeditor][type] = "library"
 
