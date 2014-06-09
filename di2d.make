@@ -216,7 +216,7 @@ projects[views_bulk_operations][subdir] = "contrib"
 projects[wysiwyg][version] = 2.x-dev
 projects[wysiwyg][subdir] = contrib
 projects[wysiwyg][patch][1786732] = http://drupal.org/files/wysiwyg-arbitrary_image_paths_markitup-1786732-3.patch
-projects[wysiwyg][patch][1338956] = https://drupal.org/files/issues/wysiwyg-html5-required-1338956-114.patch
+;projects[wysiwyg][patch][1338956] = https://drupal.org/files/issues/wysiwyg-html5-required-1338956-114.patch
 
 
 ; Themes
