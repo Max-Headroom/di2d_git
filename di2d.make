@@ -134,9 +134,6 @@ projects[link][subdir] = "contrib"
 projects[linkit][version] = "2"
 projects[linkit][subdir] = "contrib"
 
-;projects[live_css][version] = "2"
-;projects[live_css][subdir] = "contrib"
-
 projects[manualcrop][version] = "1"
 projects[manualcrop][subdir] = "contrib"
 
@@ -160,8 +157,8 @@ projects[panelizer][subdir] = "contrib"
 
 projects[panels][version] = "3.x-dev"
 projects[panels][subdir] = "contrib"
-;projects[panels][patch][2098515] = https://drupal.org/files/issues/undefined_property_notices_fix-2098515-2.patch
-;projects[panels][patch][2120849] = https://drupal.org/files/issues/panels-ipe-save-2120849-27.patch
+projects[panels][patch][2098515] = https://drupal.org/files/issues/undefined_property_notices_fix-2098515-2.patch
+projects[panels][patch][2120849] = https://drupal.org/files/issues/panels-ipe-save-2120849-27.patch
 
 projects[panels_breadcrumbs][version] = "2"
 projects[panels_breadcrumbs][subdir] = "contrib"
@@ -172,8 +169,8 @@ projects[panels_extra_layouts][subdir] = "contrib"
 projects[panels_extra_styles][version] = "1"
 projects[panels_extra_styles][subdir] = "contrib"
 
-;projects[panels_mini_ipe][version] = "1.x-dev"
-;projects[panels_mini_ipe][subdir] = "contrib"
+projects[panels_mini_ipe][version] = "1.x-dev"
+projects[panels_mini_ipe][subdir] = "contrib"
 
 projects[pathauto][version] = "1"
 projects[pathauto][subdir] = "contrib"
@@ -194,9 +191,6 @@ projects[tablefield][subdir] = "contrib"
 projects[token][version] = "1"
 projects[token][subdir] = "contrib"
 
-;projects[uuid][version] = "1"
-;projects[uuid][subdir] = "contrib"
-
 projects[variable][version] = "2"
 projects[variable][subdir] = "contrib"
 
@@ -216,8 +210,6 @@ projects[views_bulk_operations][subdir] = "contrib"
 projects[wysiwyg][version] = 2
 projects[wysiwyg][subdir] = contrib
 projects[wysiwyg][patch][1786732] = http://drupal.org/files/wysiwyg-arbitrary_image_paths_markitup-1786732-3.patch
-;projects[wysiwyg][patch][1338956] = https://drupal.org/files/issues/wysiwyg-html5-required-1338956-114.patch
-
 
 ; Themes
 projects[bootstrap][version] = "3"
