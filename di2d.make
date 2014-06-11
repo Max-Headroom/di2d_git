@@ -213,7 +213,7 @@ projects[views_bootstrap][subdir] = "contrib"
 projects[views_bulk_operations][version] = "3"
 projects[views_bulk_operations][subdir] = "contrib"
 
-projects[wysiwyg][version] = 2.x-dev
+projects[wysiwyg][version] = 2
 projects[wysiwyg][subdir] = contrib
 projects[wysiwyg][patch][1786732] = http://drupal.org/files/wysiwyg-arbitrary_image_paths_markitup-1786732-3.patch
 ;projects[wysiwyg][patch][1338956] = https://drupal.org/files/issues/wysiwyg-html5-required-1338956-114.patch
@@ -226,7 +226,8 @@ projects[bootstrap][version] = "3"
 ; Libraries
 
 libraries[ckeditor][download][type] = "get"
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.1/ckeditor_4.4.1_full.zip"
+;libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.1/ckeditor_4.4.1_full.zip"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.6.6.1/ckeditor_3.6.6.1.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
 libraries[ckeditor][type] = "library"
 
